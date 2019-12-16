@@ -1,0 +1,2136 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+
+		<title>Search - SFZ Format</title>
+
+		<meta name="author" content="Karoryfer Samples and SFZ Format Team">
+		<meta name="web-author" content="RedTide and SFZ Format Team">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+		<!-- Google Analytics -->
+		<script>
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+			ga('create', 'UA-138937603-1', 'auto');
+			ga('send', 'pageview');
+		</script>
+
+		<!-- Atom Feeds -->
+		<link href="/atom.xml" rel="alternate" title="News" type="application/atom+xml" />
+
+		<!-- Favicon Generator Icons -->
+		<link rel="apple-touch-icon" sizes="152x152" href="/assets/ico/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/assets/ico/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/assets/ico/favicon-16x16.png">
+		<link rel="manifest" href="/assets/ico/site.webmanifest">
+		<link rel="mask-icon" href="/assets/ico/safari-pinned-tab.svg" color="#5bbad5">
+		<link rel="shortcut icon" href="/assets/ico/favicon.ico">
+		<meta name="msapplication-TileColor" content="#da532c">
+		<meta name="msapplication-config" content="/assets/ico/browserconfig.xml">
+		<meta name="theme-color" content="#ffffff">
+
+		<!-- Stylesheets -->
+		<link href="/assets/css/style.min.css" rel="stylesheet" media="screen">
+		<link rel="stylesheet" type="text/css" href="/assets/css/prettify.css">
+
+		<!-- Font Awesome Icons -->
+		<script defer src="https://use.fontawesome.com/releases/v5.11.2/js/solid.js"       integrity="sha384-Mf3ap7OwO+bjTkzM1RsrothLh38uKXvMWJ2TQPXGHqZcqfeI/cyCV+sfV0IDnBDq" crossorigin="anonymous"></script>
+		<script defer src="https://use.fontawesome.com/releases/v5.11.2/js/brands.js"      integrity="sha384-b2GpqFrJizV0BUEdbrITdOA5HnxnlrErt7MlEERWd6NSJ32rHeibEvyyCuA13OAS" crossorigin="anonymous"></script>
+		<script defer src="https://use.fontawesome.com/releases/v5.11.2/js/fontawesome.js" integrity="sha384-EYYaHDhIRoBhd/Ir/1fPnxg9rZLk/55lKtlNT5KrIcONoCS2kjf7ZWzMoCLLACeo" crossorigin="anonymous"></script>
+
+	</head>
+
+	<body>
+
+		<button onclick="topFunction()" id="scrollButton" title="Go to top">Top</button>
+		<a href="#content" class="sr-only">Skip to content</a>
+		<div class="container">
+
+			<nav class="navbar navbar-expand-lg navbar-dark" style="background-color:#222">
+				<a class="navbar-brand" href="/">
+					<img src="/assets/img/logo.png"
+					width="120" height="30" class="d-inline-block align-top" alt=""></a>
+
+				<button class="navbar-toggler" type="button" data-toggle="collapse"
+					data-target="#navbarContent" aria-controls="navbarContent"
+					aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+
+				<div class="collapse navbar-collapse" id="navbarContent">
+					<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+
+
+	
+		
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarSyntax"
+								data-toggle="dropdown"
+							aria-haspopup="true" aria-expanded="false"> Syntax</a>
+							<div class="dropdown-menu" aria-labelledby="navbarSyntax">
+		
+			
+								<a class="dropdown-item"
+									href="/headers/">Headers</a>
+			
+		
+			
+								<div class="dropdown-divider"></div>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/misc/sfz1">SFZ v1 Opcodes</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/misc/sfz2">SFZ v2 Opcodes</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/misc/cakewalk">SFZ v2 Opcodes (Cakewalk)</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/extensions/aria/">ARIA Extensions</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/extensions/linuxsampler/">LinuxSampler Extensions</a>
+			
+		
+			
+								<div class="dropdown-divider"></div>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/extensions/midi_ccs">Extended MIDI CCs</a>
+			
+		
+			
+								<div class="dropdown-divider"></div>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/misc/categories">Types & Categories</a>
+			
+		
+							</div>
+	
+						</li>
+
+	
+		
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarSoftware"
+								data-toggle="dropdown"
+							aria-haspopup="true" aria-expanded="false"> Software</a>
+							<div class="dropdown-menu" aria-labelledby="navbarSoftware">
+		
+			
+								<a class="dropdown-item"
+									href="/software/players">Players</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/software/tools">Tools</a>
+			
+		
+							</div>
+	
+						</li>
+
+	
+		
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarTutorials"
+								data-toggle="dropdown"
+							aria-haspopup="true" aria-expanded="false"> Tutorials</a>
+							<div class="dropdown-menu" aria-labelledby="navbarTutorials">
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/basic_sfz_file">Basic / Template</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/sustained_note_basics">Sustained Note Basics</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/vibrato">Vibrato</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/legato">Legato</a>
+			
+		
+			
+								<div class="dropdown-divider"></div>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/drum_basics">Drum Basics</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/cymbal_muting">Cymbal Muting</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/brush_stirs">Brush Stirs</a>
+			
+		
+			
+								<div class="dropdown-divider"></div>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/sfz1_modulations">SFZ 1 Modulations</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/sfz2_modulations">SFZ 2 Modulations</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/lfo">Pitch LFO Examples</a>
+			
+		
+			
+								<div class="dropdown-divider"></div>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/videos">Video Tutorials</a>
+			
+		
+							</div>
+	
+						</li>
+
+	
+		
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarDocs"
+								data-toggle="dropdown"
+							aria-haspopup="true" aria-expanded="false"> Docs</a>
+							<div class="dropdown-menu" aria-labelledby="navbarDocs">
+		
+			
+								<a class="dropdown-item"
+									href="/docs/website-development-reference">Website Development Reference</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/docs/adding-player-opcode-list">Add players description and opcode support pages</a>
+			
+		
+							</div>
+	
+						</li>
+
+	
+						<li class="nav-item">
+							<a class="nav-link"
+								href="/news"> News</a>
+	
+						</li>
+
+					</ul>
+				</div>
+				<form class="form-inline my-2 my-lg-0" role="search"
+					action="/search/">
+					<input class="form-control mr-sm-2" type="search" name="query"
+						placeholder="Search" aria-label="Search">
+				</form>
+			</nav>
+
+			<div class="row mt-4" id="content">
+				<div class="col-md-9">
+					<article><h1>Search</h1><div class="row my-4 justify-content-center">
+	<div class="col-md-7">
+		<p class="text-center">Search this website:</p>
+		<form class="form-search" role="search" action="/search/">
+			<div class="input-group input-group-lg">
+				<input type="text" id="search-box" class="form-control searchbox" name="query" />
+				<div class="input-group-append">
+					<button class="btn btn-primary" type="submit" value="search">Search</button>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
+
+<ul id="search-results"></ul>
+
+<script>
+window.store = {"404-html": {
+	"title": "404: Page not Found","content": "The page you requested could not be found. It seems that the page you were",
+	"url": "/404.html"
+},"opcodes-mod-html": {
+	"title": "","content": "ARIA extension specifying whether modulation of the target parameter",
+	"url": "/opcodes/_mod.html"
+},"docs-adding-player-opcode-list-html": {
+	"title": "Add players description and opcode support pages","content": "Some players in the players page are flagged as documented, that means that",
+	"url": "/docs/adding-player-opcode-list.html"
+},"opcodes-amp-keycenter-html": {
+	"title": "","content": "Examples",
+	"url": "/opcodes/amp_keycenter.html"
+},"opcodes-amp-keytrack-html": {
+	"title": "","content": "Examples",
+	"url": "/opcodes/amp_keytrack.html"
+},"opcodes-amp-random-html": {
+	"title": "","content": "Examples",
+	"url": "/opcodes/amp_random.html"
+},"opcodes-amp-velcurve-n-html": {
+	"title": "","content": "This opcode range allows defining a specific curve for the amplifier velocity.",
+	"url": "/opcodes/amp_velcurve_N.html"
+},"opcodes-amp-veltrack-html": {
+	"title": "","content": "Volume changes with incoming velocity in a concave shape according to the",
+	"url": "/opcodes/amp_veltrack.html"
+},"opcodes-ampeg-attack-html": {
+	"title": "","content": "Examples",
+	"url": "/opcodes/ampeg_attack.html"
+},"opcodes-ampeg-attack-onccn-html": {
+	"title": "","content": "Examples",
+	"url": "/opcodes/ampeg_attack_onccN.html"
+},"opcodes-ampeg-attack-shape-html": {
+	"title": "","content": "0 is linear. Positive values are slower curves (that means the envelope will",
+	"url": "/opcodes/ampeg_attack_shape.html"
+},"opcodes-ampeg-attackccn-html": {
+	"title": "","content": "Examples",
+	"url": "/opcodes/ampeg_attackccN.html"
+},"opcodes-ampeg-decay-html": {
+	"title": "","content": "Examples",
+	"url": "/opcodes/ampeg_decay.html"
+},"opcodes-ampeg-decay-shape-html": {
+	"title": "","content": "0 is linear, positive values are slower curves (that means the envelope will",
+	"url": "/opcodes/ampeg_decay_shape.html"
+},"opcodes-ampeg-decay-zero-html": {
+	"title": "","content": "When 1, indicates decay time is the time it would take to get from 0dBs to -oo,",
+	"url": "/opcodes/ampeg_decay_zero.html"
+},"opcodes-ampeg-decayccn-html": {
+	"title": "","content": "Examples",
+	"url": "/opcodes/ampeg_decayccN.html"
+},"opcodes-ampeg-delay-html": {
+	"title": "","content": "This is the time elapsed from note on to the start of",
+	"url": "/opcodes/ampeg_delay.html"
+},"opcodes-ampeg-delayccn-html": {
+	"title": "","content": "This is the time elapsed from note on to the start of",
+	"url": "/opcodes/ampeg_delayccN.html"
+},"opcodes-ampeg-depth-html": {
+	"title": "","content": "For pitcheg and fileg, this is in cents, and can range from -12000 to 12000.",
+	"url": "/opcodes/ampeg_depth.html"
+},"opcodes-ampeg-dynamic-html": {
+	"title": "","content": "When 1, causes envelope durations to be recalculated when a MIDI CC message",
+	"url": "/opcodes/ampeg_dynamic.html"
+},"opcodes-ampeg-hold-html": {
+	"title": "","content": "During the hold stage, EG output will remain at its maximum value.",
+	"url": "/opcodes/ampeg_hold.html"
+},"opcodes-ampeg-holdccn-html": {
+	"title": "","content": "During the hold stage, EG output will remain at its maximum value.",
+	"url": "/opcodes/ampeg_holdccN.html"
+},"opcodes-ampeg-release-html": {
+	"title": "","content": "Examples",
+	"url": "/opcodes/ampeg_release.html"
+},"opcodes-ampeg-release-shape-html": {
+	"title": "","content": "0 is linear, positive values are slower curves (that means the envelope will",
+	"url": "/opcodes/ampeg_release_shape.html"
+},"opcodes-ampeg-release-zero-html": {
+	"title": "","content": "When true/on/1, indicates release time is the time it would take to get",
+	"url": "/opcodes/ampeg_release_zero.html"
+},"opcodes-ampeg-releaseccn-html": {
+	"title": "","content": "Examples",
+	"url": "/opcodes/ampeg_releaseccN.html"
+},"opcodes-ampeg-start-html": {
+	"title": "","content": "Examples",
+	"url": "/opcodes/ampeg_start.html"
+},"opcodes-ampeg-startccn-html": {
+	"title": "","content": "Examples",
+	"url": "/opcodes/ampeg_startccN.html"
+},"opcodes-ampeg-sustain-html": {
+	"title": "","content": "Examples",
+	"url": "/opcodes/ampeg_sustain.html"
+},"opcodes-ampeg-sustainccn-html": {
+	"title": "","content": "Examples",
+	"url": "/opcodes/ampeg_sustainccN.html"
+},"modulations-moved-ampeg-vel2attack-html": {
+	"title": "","content": "Examples",
+	"url": "/modulations/moved/ampeg_vel2attack.html"
+},"opcodes-ampeg-vel2attack-html": {
+	"title": "","content": "Examples",
+	"url": "/opcodes/ampeg_vel2attack.html"
+},"modulations-moved-ampeg-vel2decay-html": {
+	"title": "","content": "Examples",
+	"url": "/modulations/moved/ampeg_vel2decay.html"
+},"opcodes-ampeg-vel2decay-html": {
+	"title": "","content": "Examples",
+	"url": "/opcodes/ampeg_vel2decay.html"
+},"modulations-moved-ampeg-vel2delay-html": {
+	"title": "","content": "Examples",
+	"url": "/modulations/moved/ampeg_vel2delay.html"
+},"opcodes-ampeg-vel2delay-html": {
+	"title": "","content": "This is the time elapsed from note on to the start of",
+	"url": "/opcodes/ampeg_vel2delay.html"
+},"modulations-moved-ampeg-vel2hold-html": {
+	"title": "","content": "Examples",
+	"url": "/modulations/moved/ampeg_vel2hold.html"
+},"opcodes-ampeg-vel2hold-html": {
+	"title": "","content": "During the hold stage, EG output will remain at its maximum value.",
+	"url": "/opcodes/ampeg_vel2hold.html"
+},"modulations-moved-ampeg-vel2release-html": {
+	"title": "","content": "Examples",
+	"url": "/modulations/moved/ampeg_vel2release.html"
+},"opcodes-ampeg-vel2release-html": {
+	"title": "","content": "Examples",
+	"url": "/opcodes/ampeg_vel2release.html"
+},"modulations-moved-ampeg-vel2sustain-html": {
+	"title": "","content": "Examples",
+	"url": "/modulations/moved/ampeg_vel2sustain.html"
+},"opcodes-ampeg-vel2sustain-html": {
+	"title": "","content": "Examples",
+	"url": "/opcodes/ampeg_vel2sustain.html"
+},"opcodes-amplfo-delay-html": {
+	"title": "","content": "Examples",
+	"url": "/opcodes/amplfo_delay.html"
+},"opcodes-amplfo-depth-html": {
+	"title": "","content": "Examples",
+	"url": "/opcodes/amplfo_depth.html"
+},"opcodes-amplfo-depthccn-html": {
+	"title": "","content": "Examples",
+	"url": "/opcodes/amplfo_depthccN.html"
+},"modulations-moved-amplfo-depthchanaft-html": {
+	"title": "","content": "In decibels for amplitude, in cents for pitch and filter cutoff.",
+	"url": "/modulations/moved/amplfo_depthchanaft.html"
+},"opcodes-amplfo-depthchanaft-html": {
+	"title": "","content": "Examples",
+	"url": "/opcodes/amplfo_depthchanaft.html"
+},"modulations-moved-amplfo-depthpolyaft-html": {
+	"title": "","content": "In decibels for amplitude, in cents for pitch and filter cutoff.",
+	"url": "/modulations/moved/amplfo_depthpolyaft.html"
+},"opcodes-amplfo-depthpolyaft-html": {
+	"title": "","content": "Examples",
+	"url": "/opcodes/amplfo_depthpolyaft.html"
+},"opcodes-amplfo-fade-html": {
+	"title": "","content": "Examples",
+	"url": "/opcodes/amplfo_fade.html"
+},"opcodes-amplfo-freq-html": {
+	"title": "","content": "Examples",
+	"url": "/opcodes/amplfo_freq.html"
+},"opcodes-amplfo-freqccn-html": {
+	"title": "","content": "Examples",
+	"url": "/opcodes/amplfo_freqccN.html"
+},"modulations-moved-amplfo-freqchanaft-html": {
+	"title": "","content": "Can be negative, and according to the SFZ spec the allowed range is -200 to 200,",
+	"url": "/modulations/moved/amplfo_freqchanaft.html"
+},"opcodes-amplfo-freqchanaft-html": {
+	"title": "","content": "Examples",
+	"url": "/opcodes/amplfo_freqchanaft.html"
+},"modulations-moved-amplfo-freqpolyaft-html": {
+	"title": "","content": "Can be negative, and according to the SFZ spec the allowed range is -200 to 200,",
+	"url": "/modulations/moved/amplfo_freqpolyaft.html"
+},"opcodes-amplfo-freqpolyaft-html": {
+	"title": "","content": "Examples",
+	"url": "/opcodes/amplfo_freqpolyaft.html"
+},"opcodes-amplitude-html": {
+	"title": "","content": "100% amplitude meaning no volume change is applied to the sample when played.",
+	"url": "/opcodes/amplitude.html"
+},"opcodes-amplitude-curveccn-html": {
+	"title": "","content": "100% amplitude meaning no volume change is applied to the sample when played.",
+	"url": "/opcodes/amplitude_curveccN.html"
+},"opcodes-amplitude-onccn-html": {
+	"title": "","content": "100% amplitude meaning no volume change is applied to the sample when played.",
+	"url": "/opcodes/amplitude_onccN.html"
+},"opcodes-amplitude-smoothccn-html": {
+	"title": "","content": "100% amplitude meaning no volume change is applied to the sample when played.",
+	"url": "/opcodes/amplitude_smoothccN.html"
+},"software-players-aria-html": {
+	"title": "ARIA Engine","content": "The ARIA Engine is an audio sampling and synthesis Engine, developed by",
+	"url": "/software/players/aria.html"
+},"atom-xml": {
+	"title": "","content": "",
+	"url": "/atom.xml"
+},"tutorials-basic-sfz-file-html": {
+	"title": "Basic SFZ file","content": "Just copy the following in your preferred text editor.",
+	"url": "/tutorials/basic_sfz_file.html"
+},"opcodes-bend-down-html": {
+	"title": "","content": "If bend_up is set to a positive value,",
+	"url": "/opcodes/bend_down.html"
+},"opcodes-bend-smooth-html": {
+	"title": "","content": "Examples",
+	"url": "/opcodes/bend_smooth.html"
+},"opcodes-bend-step-html": {
+	"title": "","content": "Examples",
+	"url": "/opcodes/bend_step.html"
+},"opcodes-bend-stepdown-html": {
+	"title": "","content": "Examples",
+	"url": "/opcodes/bend_stepdown.html"
+},"opcodes-bend-stepup-html": {
+	"title": "","content": "If this is set to the same value as bend_stepdown,",
+	"url": "/opcodes/bend_stepup.html"
+},"opcodes-bend-up-html": {
+	"title": "","content": "If bend_up is negative,",
+	"url": "/opcodes/bend_up.html"
+},"tutorials-brush-stirs-html": {
+	"title": "Brush stirs","content": "Not all drum sounds are hits which can be used in the usual way described in our drum basics",
+	"url": "/tutorials/brush_stirs.html"
+},"misc-cakewalk-html": {
+	"title": "Cakewalk SFZ v2 Opcodes","content": "These opcodes have not been implemented in any currently available SFZ player,",
+	"url": "/misc/cakewalk.html"
+},"misc-categories-html": {
+	"title": "Categories","content": "Instruments Settings",
+	"url": "/misc/categories.html"
+},"headers-control-html": {
+	"title": "‹control›","content": "SFZ 2 header which should come before ‹global› in the file,",
+	"url": "/headers/control.html"
+},"opcodes-count-html": {
+	"title": "","content": "If this opcode is specified, the sample will restart as many times as defined.",
+	"url": "/opcodes/count.html"
+},"headers-curve-html": {
+	"title": "‹curve›","content": "A header for defining curves for MIDI CC controls.",
+	"url": "/headers/curve.html"
+},"opcodes-curve-index-html": {
+	"title": "‹curve›","content": "A header for defining curves for MIDI CC controls.",
+	"url": "/opcodes/curve_index.html"
+},"opcodes-cutoff-html": {
+	"title": "","content": "Note that while this is specified in Hertz,",
+	"url": "/opcodes/cutoff.html"
+},"opcodes-cutoff2-html": {
+	"title": "","content": "When used, there are two filters applied to the region in series.",
+	"url": "/opcodes/cutoff2.html"
+},"opcodes-cutoff2-curveccn-html": {
+	"title": "","content": "When used, there are two filters applied to the region in series.",
+	"url": "/opcodes/cutoff2_curveccN.html"
+},"opcodes-cutoff2-onccn-html": {
+	"title": "","content": "When used, there are two filters applied to the region in series.",
+	"url": "/opcodes/cutoff2_onccN.html"
+},"opcodes-cutoff2-smoothccn-html": {
+	"title": "","content": "When used, there are two filters applied to the region in series.",
+	"url": "/opcodes/cutoff2_smoothccN.html"
+},"opcodes-cutoff2-stepccn-html": {
+	"title": "","content": "When used, there are two filters applied to the region in series.",
+	"url": "/opcodes/cutoff2_stepccN.html"
+},"opcodes-cutoff-ccn-html": {
+	"title": "","content": "Note that while this is specified in Hertz,",
+	"url": "/opcodes/cutoff_ccN.html"
+},"opcodes-cutoff-chanaft-html": {
+	"title": "","content": "Note that while this is specified in Hertz,",
+	"url": "/opcodes/cutoff_chanaft.html"
+},"opcodes-cutoff-curveccn-html": {
+	"title": "","content": "Note that while this is specified in Hertz,",
+	"url": "/opcodes/cutoff_curveccN.html"
+},"opcodes-cutoff-onccn-html": {
+	"title": "","content": "Note that while this is specified in Hertz,",
+	"url": "/opcodes/cutoff_onccN.html"
+},"opcodes-cutoff-polyaft-html": {
+	"title": "","content": "Note that while this is specified in Hertz,",
+	"url": "/opcodes/cutoff_polyaft.html"
+},"opcodes-cutoff-smoothccn-html": {
+	"title": "","content": "Note that while this is specified in Hertz,",
+	"url": "/opcodes/cutoff_smoothccN.html"
+},"opcodes-cutoff-stepccn-html": {
+	"title": "","content": "Note that while this is specified in Hertz,",
+	"url": "/opcodes/cutoff_stepccN.html"
+},"tutorials-cymbal-muting-html": {
+	"title": "Cymbal muting","content": "A lot of the information in this article deals with implementing sampled hi-hats",
+	"url": "/tutorials/cymbal_muting.html"
+},"opcodes-default-path-html": {
+	"title": "","content": "Used under the ‹control› header.",
+	"url": "/opcodes/default_path.html"
+},"opcodes-define-html": {
+	"title": "","content": "Variable names start with the $ character.",
+	"url": "/opcodes/define.html"
+},"opcodes-delay-html": {
+	"title": "","content": "If a delay value is specified, the region playback will be postponed for the",
+	"url": "/opcodes/delay.html"
+},"opcodes-delay-beats-html": {
+	"title": "","content": "",
+	"url": "/opcodes/delay_beats.html"
+},"opcodes-delay-ccn-html": {
+	"title": "","content": "If a delay value is specified, the region playback will be postponed for the",
+	"url": "/opcodes/delay_ccN.html"
+},"opcodes-delay-onccn-html": {
+	"title": "","content": "If a delay value is specified, the region playback will be postponed for the",
+	"url": "/opcodes/delay_onccN.html"
+},"opcodes-delay-random-html": {
+	"title": "","content": "If the region receives a note-off message before delay time,",
+	"url": "/opcodes/delay_random.html"
+},"opcodes-delay-samples-html": {
+	"title": "","content": "If the region receives a note-off message before delay time, the region won’t play.",
+	"url": "/opcodes/delay_samples.html"
+},"opcodes-delay-samples-onccn-html": {
+	"title": "","content": "If the region receives a note-off message before delay time, the region won’t play.",
+	"url": "/opcodes/delay_samples_onccN.html"
+},"opcodes-direction-html": {
+	"title": "","content": "This is similar to loop_type but affects the entire sample,",
+	"url": "/opcodes/direction.html"
+},"tutorials-drum-basics-html": {
+	"title": "Drum basics","content": "SFZ has a lot of opcodes. No instrument uses all of them, though, and even highly",
+	"url": "/tutorials/drum_basics.html"
+},"headers-effect-html": {
+	"title": "‹effect›","content": "SFZ header for effects controls.",
+	"url": "/headers/effect.html"
+},"opcodes-effect1-html": {
+	"title": "","content": "Example",
+	"url": "/opcodes/effect1.html"
+},"opcodes-effect2-html": {
+	"title": "","content": "Example",
+	"url": "/opcodes/effect2.html"
+},"opcodes-egn-amplitude-html": {
+	"title": "","content": "",
+	"url": "/opcodes/egN_amplitude.html"
+},"opcodes-egn-amplitude-onccx-html": {
+	"title": "","content": "",
+	"url": "/opcodes/egN_amplitude_onccX.html"
+},"opcodes-egn-bitred-html": {
+	"title": "","content": "",
+	"url": "/opcodes/egN_bitred.html"
+},"opcodes-egn-bitred-onccx-html": {
+	"title": "","content": "",
+	"url": "/opcodes/egN_bitred_onccX.html"
+},"opcodes-egn-curvex-html": {
+	"title": "","content": "Example",
+	"url": "/opcodes/egN_curveX.html"
+},"opcodes-egn-cutoff-html": {
+	"title": "","content": "",
+	"url": "/opcodes/egN_cutoff.html"
+},"opcodes-egn-cutoff2-html": {
+	"title": "","content": "",
+	"url": "/opcodes/egN_cutoff2.html"
+},"opcodes-egn-cutoff2-onccx-html": {
+	"title": "","content": "",
+	"url": "/opcodes/egN_cutoff2_onccX.html"
+},"opcodes-egn-cutoff-onccx-html": {
+	"title": "","content": "",
+	"url": "/opcodes/egN_cutoff_onccX.html"
+},"opcodes-egn-decim-html": {
+	"title": "","content": "",
+	"url": "/opcodes/egN_decim.html"
+},"opcodes-egn-decim-onccx-html": {
+	"title": "","content": "",
+	"url": "/opcodes/egN_decim_onccX.html"
+},"opcodes-egn-depth-lfox-html": {
+	"title": "","content": "",
+	"url": "/opcodes/egN_depth_lfoX.html"
+},"opcodes-egn-depthadd-lfox-html": {
+	"title": "","content": "",
+	"url": "/opcodes/egN_depthadd_lfoX.html"
+},"opcodes-egn-driveshape-html": {
+	"title": "","content": "",
+	"url": "/opcodes/egN_driveshape.html"
+},"opcodes-egn-driveshape-onccx-html": {
+	"title": "","content": "",
+	"url": "/opcodes/egN_driveshape_onccX.html"
+},"opcodes-egn-eqxbw-html": {
+	"title": "","content": "",
+	"url": "/opcodes/egN_eqXbw.html"
+},"opcodes-egn-eqxbw-onccy-html": {
+	"title": "","content": "",
+	"url": "/opcodes/egN_eqXbw_onccY.html"
+},"opcodes-egn-eqxfreq-html": {
+	"title": "","content": "",
+	"url": "/opcodes/egN_eqXfreq.html"
+},"opcodes-egn-eqxfreq-onccy-html": {
+	"title": "","content": "",
+	"url": "/opcodes/egN_eqXfreq_onccY.html"
+},"opcodes-egn-eqxgain-html": {
+	"title": "","content": "",
+	"url": "/opcodes/egN_eqXgain.html"
+},"opcodes-egn-eqxgain-onccy-html": {
+	"title": "","content": "",
+	"url": "/opcodes/egN_eqXgain_onccY.html"
+},"opcodes-egn-freq-lfox-html": {
+	"title": "","content": "",
+	"url": "/opcodes/egN_freq_lfoX.html"
+},"opcodes-egn-levelx-html": {
+	"title": "","content": "Examples",
+	"url": "/opcodes/egN_levelX.html"
+},"opcodes-egn-levelx-onccy-html": {
+	"title": "","content": "Examples",
+	"url": "/opcodes/egN_levelX_onccY.html"
+},"opcodes-egn-loop-html": {
+	"title": "","content": "Envelopes can be looped. Not sure exactly how this works and will need to test",
+	"url": "/opcodes/egN_loop.html"
+},"opcodes-egn-loop-count-html": {
+	"title": "","content": "",
+	"url": "/opcodes/egN_loop_count.html"
+},"opcodes-egn-noiselevel-html": {
+	"title": "","content": "",
+	"url": "/opcodes/egN_noiselevel.html"
+},"opcodes-egn-noiselevel-onccx-html": {
+	"title": "","content": "",
+	"url": "/opcodes/egN_noiselevel_onccX.html"
+},"opcodes-egn-noisestep-html": {
+	"title": "","content": "",
+	"url": "/opcodes/egN_noisestep.html"
+},"opcodes-egn-noisestep-onccx-html": {
+	"title": "","content": "",
+	"url": "/opcodes/egN_noisestep_onccX.html"
+},"opcodes-egn-noisetone-html": {
+	"title": "","content": "",
+	"url": "/opcodes/egN_noisetone.html"
+},"opcodes-egn-noisetone-onccx-html": {
+	"title": "","content": "",
+	"url": "/opcodes/egN_noisetone_onccX.html"
+},"opcodes-egn-pan-html": {
+	"title": "","content": "",
+	"url": "/opcodes/egN_pan.html"
+},"opcodes-egn-pan-curve-html": {
+	"title": "","content": "",
+	"url": "/opcodes/egN_pan_curve.html"
+},"opcodes-egn-pan-curveccx-html": {
+	"title": "","content": "",
+	"url": "/opcodes/egN_pan_curveccX.html"
+},"opcodes-egn-pan-onccx-html": {
+	"title": "","content": "",
+	"url": "/opcodes/egN_pan_onccX.html"
+},"opcodes-egn-pitch-html": {
+	"title": "","content": "",
+	"url": "/opcodes/egN_pitch.html"
+},"opcodes-egn-pitch-onccx-html": {
+	"title": "","content": "",
+	"url": "/opcodes/egN_pitch_onccX.html"
+},"opcodes-egn-points-html": {
+	"title": "","content": "Sets the number of points in envelope number N. The level of the envelope",
+	"url": "/opcodes/egN_points.html"
+},"opcodes-egn-rectify-html": {
+	"title": "","content": "",
+	"url": "/opcodes/egN_rectify.html"
+},"opcodes-egn-rectify-onccx-html": {
+	"title": "","content": "",
+	"url": "/opcodes/egN_rectify_onccX.html"
+},"opcodes-egn-resonance-html": {
+	"title": "","content": "",
+	"url": "/opcodes/egN_resonance.html"
+},"opcodes-egn-resonance2-html": {
+	"title": "","content": "",
+	"url": "/opcodes/egN_resonance2.html"
+},"opcodes-egn-resonance2-onccx-html": {
+	"title": "","content": "",
+	"url": "/opcodes/egN_resonance2_onccX.html"
+},"opcodes-egn-resonance-onccx-html": {
+	"title": "","content": "",
+	"url": "/opcodes/egN_resonance_onccX.html"
+},"opcodes-egn-ringmod-html": {
+	"title": "","content": "",
+	"url": "/opcodes/egN_ringmod.html"
+},"opcodes-egn-ringmod-onccx-html": {
+	"title": "","content": "",
+	"url": "/opcodes/egN_ringmod_onccX.html"
+},"opcodes-egn-shapex-html": {
+	"title": "","content": "Curve shape before the specified envelope point in envelope N. Default is 0.",
+	"url": "/opcodes/egN_shapeX.html"
+},"opcodes-egn-sustain-html": {
+	"title": "","content": "This needs to be tested to verify if this is what it actually does.",
+	"url": "/opcodes/egN_sustain.html"
+},"opcodes-egn-timex-html": {
+	"title": "","content": "The time duration from an envelope point to another, in seconds.",
+	"url": "/opcodes/egN_timeX.html"
+},"opcodes-egn-timex-onccy-html": {
+	"title": "","content": "The time duration from an envelope point to another, in seconds.",
+	"url": "/opcodes/egN_timeX_onccY.html"
+},"opcodes-egn-volume-html": {
+	"title": "","content": "",
+	"url": "/opcodes/egN_volume.html"
+},"opcodes-egn-volume-onccx-html": {
+	"title": "","content": "",
+	"url": "/opcodes/egN_volume_onccX.html"
+},"opcodes-egn-width-html": {
+	"title": "","content": "",
+	"url": "/opcodes/egN_width.html"
+},"opcodes-egn-width-onccx-html": {
+	"title": "","content": "",
+	"url": "/opcodes/egN_width_onccX.html"
+},"opcodes-end-html": {
+	"title": "","content": "The player will reproduce the whole sample if end is not specified - in other",
+	"url": "/opcodes/end.html"
+},"types-envelope-generators-html": {
+	"title": "Envelope Generators","content": "Envelope Generator opcodes are part of the Modulation",
+	"url": "/types/envelope_generators.html"
+},"opcodes-eqn-bw-html": {
+	"title": "","content": "Examples",
+	"url": "/opcodes/eqN_bw.html"
+},"opcodes-eqn-bwccx-html": {
+	"title": "","content": "Examples",
+	"url": "/opcodes/eqN_bwccX.html"
+},"opcodes-eqn-dynamic-html": {
+	"title": "","content": "When 1, causes parameters for eq band N to be recalculated when a MIDI",
+	"url": "/opcodes/eqN_dynamic.html"
+},"opcodes-eqn-freq-html": {
+	"title": "","content": "Examples",
+	"url": "/opcodes/eqN_freq.html"
+},"opcodes-eqn-freqccx-html": {
+	"title": "","content": "Examples",
+	"url": "/opcodes/eqN_freqccX.html"
+},"opcodes-eqn-gain-html": {
+	"title": "","content": "Examples",
+	"url": "/opcodes/eqN_gain.html"
+},"opcodes-eqn-gainccx-html": {
+	"title": "","content": "Examples",
+	"url": "/opcodes/eqN_gainccX.html"
+},"modulations-moved-eqn-vel2freq-html": {
+	"title": "","content": "Examples",
+	"url": "/modulations/moved/eqN_vel2freq.html"
+},"opcodes-eqn-vel2freq-html": {
+	"title": "","content": "Examples",
+	"url": "/opcodes/eqN_vel2freq.html"
+},"opcodes-eqn-vel2gain-html": {
+	"title": "","content": "Examples",
+	"url": "/opcodes/eqN_vel2gain.html"
+},"opcodes-fil2-keycenter-html": {
+	"title": "","content": "In this key, the filter keyboard tracking will have no effect.",
+	"url": "/opcodes/fil2_keycenter.html"
+},"opcodes-fil2-keytrack-html": {
+	"title": "","content": "A value of 100 means 100 cents per half-step.",
+	"url": "/opcodes/fil2_keytrack.html"
+},"opcodes-fil2-type-html": {
+	"title": "","content": "When used, there are two filters applied to the region in series.",
+	"url": "/opcodes/fil2_type.html"
+},"opcodes-fil2-veltrack-html": {
+	"title": "","content": "Examples",
+	"url": "/opcodes/fil2_veltrack.html"
+},"opcodes-fil-keycenter-html": {
+	"title": "","content": "In this key, the filter keyboard tracking will have no effect.",
+	"url": "/opcodes/fil_keycenter.html"
+},"opcodes-fil-keytrack-html": {
+	"title": "","content": "A value of 100 means 100 cents per half-step.",
+	"url": "/opcodes/fil_keytrack.html"
+},"opcodes-fil-random-html": {
+	"title": "","content": "Examples",
+	"url": "/opcodes/fil_random.html"
+},"opcodes-fil-type-html": {
+	"title": "","content": "Allows you to choose which type of filter you use. if not specified",
+	"url": "/opcodes/fil_type.html"
+},"opcodes-fil-veltrack-html": {
+	"title": "","content": "Examples",
+	"url": "/opcodes/fil_veltrack.html"
+},"opcodes-fileg-attack-html": {
+	"title": "","content": "Examples",
+	"url": "/opcodes/fileg_attack.html"
+},"opcodes-fileg-attack-shape-html": {
+	"title": "","content": "0 is linear. Positive values are slower curves (that means the envelope will",
+	"url": "/opcodes/fileg_attack_shape.html"
+},"opcodes-fileg-decay-html": {
+	"title": "","content": "Examples",
+	"url": "/opcodes/fileg_decay.html"
+},"opcodes-fileg-decay-shape-html": {
+	"title": "","content": "0 is linear, positive values are slower curves (that means the envelope will",
+	"url": "/opcodes/fileg_decay_shape.html"
+},"opcodes-fileg-decay-zero-html": {
+	"title": "","content": "When 1, indicates decay time is the time it would take to get from 0dBs to -oo,",
+	"url": "/opcodes/fileg_decay_zero.html"
+},"opcodes-fileg-delay-html": {
+	"title": "","content": "This is the time elapsed from note on to the start of",
+	"url": "/opcodes/fileg_delay.html"
+},"opcodes-fileg-depth-html": {
+	"title": "","content": "For pitcheg and fileg, this is in cents, and can range from -12000 to 12000.",
+	"url": "/opcodes/fileg_depth.html"
+},"opcodes-fileg-dynamic-html": {
+	"title": "","content": "When 1, causes envelope durations to be recalculated when a MIDI CC message",
+	"url": "/opcodes/fileg_dynamic.html"
+},"opcodes-fileg-hold-html": {
+	"title": "","content": "During the hold stage, EG output will remain at its maximum value.",
+	"url": "/opcodes/fileg_hold.html"
+},"opcodes-fileg-release-html": {
+	"title": "","content": "Examples",
+	"url": "/opcodes/fileg_release.html"
+},"opcodes-fileg-release-shape-html": {
+	"title": "","content": "0 is linear, positive values are slower curves (that means the envelope will",
+	"url": "/opcodes/fileg_release_shape.html"
+},"opcodes-fileg-release-zero-html": {
+	"title": "","content": "When true/on/1, indicates release time is the time it would take to get",
+	"url": "/opcodes/fileg_release_zero.html"
+},"opcodes-fileg-start-html": {
+	"title": "","content": "Examples",
+	"url": "/opcodes/fileg_start.html"
+},"opcodes-fileg-sustain-html": {
+	"title": "","content": "Examples",
+	"url": "/opcodes/fileg_sustain.html"
+},"opcodes-fileg-vel2attack-html": {
+	"title": "","content": "Examples",
+	"url": "/opcodes/fileg_vel2attack.html"
+},"opcodes-fileg-vel2decay-html": {
+	"title": "","content": "Examples",
+	"url": "/opcodes/fileg_vel2decay.html"
+},"opcodes-fileg-vel2delay-html": {
+	"title": "","content": "This is the time elapsed from note on to the start of",
+	"url": "/opcodes/fileg_vel2delay.html"
+},"opcodes-fileg-vel2depth-html": {
+	"title": "","content": "For pitcheg and fileg, this is in cents, and can range from -12000 to 12000.",
+	"url": "/opcodes/fileg_vel2depth.html"
+},"opcodes-fileg-vel2hold-html": {
+	"title": "","content": "During the hold stage, EG output will remain at its maximum value.",
+	"url": "/opcodes/fileg_vel2hold.html"
+},"opcodes-fileg-vel2release-html": {
+	"title": "","content": "Examples",
+	"url": "/opcodes/fileg_vel2release.html"
+},"opcodes-fileg-vel2sustain-html": {
+	"title": "","content": "Examples",
+	"url": "/opcodes/fileg_vel2sustain.html"
+},"opcodes-fillfo-delay-html": {
+	"title": "","content": "Examples",
+	"url": "/opcodes/fillfo_delay.html"
+},"opcodes-fillfo-depth-html": {
+	"title": "","content": "Examples",
+	"url": "/opcodes/fillfo_depth.html"
+},"opcodes-fillfo-depthccn-html": {
+	"title": "","content": "Examples",
+	"url": "/opcodes/fillfo_depthccN.html"
+},"opcodes-fillfo-depthchanaft-html": {
+	"title": "","content": "Examples",
+	"url": "/opcodes/fillfo_depthchanaft.html"
+},"opcodes-fillfo-depthpolyaft-html": {
+	"title": "","content": "Examples",
+	"url": "/opcodes/fillfo_depthpolyaft.html"
+},"opcodes-fillfo-fade-html": {
+	"title": "","content": "Examples",
+	"url": "/opcodes/fillfo_fade.html"
+},"opcodes-fillfo-freq-html": {
+	"title": "","content": "Examples",
+	"url": "/opcodes/fillfo_freq.html"
+},"opcodes-fillfo-freqccn-html": {
+	"title": "","content": "Examples",
+	"url": "/opcodes/fillfo_freqccN.html"
+},"opcodes-fillfo-freqchanaft-html": {
+	"title": "","content": "Examples",
+	"url": "/opcodes/fillfo_freqchanaft.html"
+},"opcodes-fillfo-freqpolyaft-html": {
+	"title": "","content": "Examples",
+	"url": "/opcodes/fillfo_freqpolyaft.html"
+},"opcodes-gain-ccn-html": {
+	"title": "","content": "Range is -144.6 to 6 in the specification,",
+	"url": "/opcodes/gain_ccN.html"
+},"opcodes-gain-onccn-html": {
+	"title": "","content": "Range is -144.6 to 6 in the specification,",
+	"url": "/opcodes/gain_onccN.html"
+},"headers-global-html": {
+	"title": "‹global›","content": "The global header allows entering parameters which are common for many regions in",
+	"url": "/headers/global.html"
+},"opcodes-global-amplitude-html": {
+	"title": "","content": "Example",
+	"url": "/opcodes/global_amplitude.html"
+},"opcodes-global-label-html": {
+	"title": "","content": "Useful for debugging.",
+	"url": "/opcodes/global_label.html"
+},"opcodes-global-volume-html": {
+	"title": "","content": "",
+	"url": "/opcodes/global_volume.html"
+},"assets-js-google-cse-js": {
+	"title": "","content": "var searchCallback = function() {",
+	"url": "/assets/js/google-cse.js"
+},"headers-group-html": {
+	"title": "‹group›","content": "The group header is different than the group opcode, and",
+	"url": "/headers/group.html"
+},"opcodes-group-html": {
+	"title": "","content": "Examples",
+	"url": "/opcodes/group.html"
+},"opcodes-group-amplitude-html": {
+	"title": "","content": "Example",
+	"url": "/opcodes/group_amplitude.html"
+},"opcodes-group-label-html": {
+	"title": "","content": "Useful for debugging.",
+	"url": "/opcodes/group_label.html"
+},"opcodes-group-volume-html": {
+	"title": "","content": "",
+	"url": "/opcodes/group_volume.html"
+},"opcodes-hibend-html": {
+	"title": "lobend / hibend","content": "The region will play only if last Pitch Bend message received was in the",
+	"url": "/opcodes/hibend.html"
+},"opcodes-hibpm-html": {
+	"title": "lobpm / hibpm","content": "Host tempo value. The region will play if the host tempo is equal to or higher",
+	"url": "/opcodes/hibpm.html"
+},"opcodes-hiccn-html": {
+	"title": "loccN / hiccN","content": "N will normally be a number from 1 to 127.",
+	"url": "/opcodes/hiccN.html"
+},"opcodes-hichan-html": {
+	"title": "lochan / hichan","content": "lochan and hichan will almost always be used together.",
+	"url": "/opcodes/hichan.html"
+},"opcodes-hichanaft-html": {
+	"title": "lochanaft / hichanaft","content": "Examples",
+	"url": "/opcodes/hichanaft.html"
+},"opcodes-hihdccn-html": {
+	"title": "lohdccN / hihdccN","content": "realcc is a deprecated alias for hdcc. Other opcodes such as set_hdccN",
+	"url": "/opcodes/hihdccN.html"
+},"opcodes-hikey-html": {
+	"title": "lokey / hikey","content": "When a region only covers one note, it is generally more convenient to use",
+	"url": "/opcodes/hikey.html"
+},"opcodes-hint-html": {
+	"title": "","content": "ARIA supports specific opcodes in ‹control›",
+	"url": "/opcodes/hint_.html"
+},"opcodes-hipolyaft-html": {
+	"title": "lopolyaft / hipolyaft","content": "The incoming note information in the Polyphonic Aftertouch message is",
+	"url": "/opcodes/hipolyaft.html"
+},"opcodes-hiprog-html": {
+	"title": "loprog / hiprog","content": "MIDI program numbers in the General MIDI spec ranged from 0 to 127 but were",
+	"url": "/opcodes/hiprog.html"
+},"opcodes-hirand-html": {
+	"title": "lorand / hirand","content": "Random values. The player will generate a new random number on every note-on event,",
+	"url": "/opcodes/hirand.html"
+},"software-players-hise-html": {
+	"title": "HISE","content": "HISE is an open source framework for building sample based virtual instruments.",
+	"url": "/software/players/hise.html"
+},"opcodes-hitimer-html": {
+	"title": "lotimer / hitimer","content": "It is not known what the timer is. Not implemented in ARIA, may have been",
+	"url": "/opcodes/hitimer.html"
+},"opcodes-hivel-html": {
+	"title": "lovel / hivel","content": "This is obviously useful for instruments with dynamic layers controlled by velocity.",
+	"url": "/opcodes/hivel.html"
+},"opcodes-image-html": {
+	"title": "","content": "",
+	"url": "/opcodes/image.html"
+},"opcodes-include-html": {
+	"title": "","content": "A special directive, #include allows using SFZ files as building blocks for",
+	"url": "/opcodes/include.html"
+},"headers": {
+	"title": "SFZ Headers","content": "SFZ files are subdivided into sections by headers. The region header is the most",
+	"url": "/headers/"
+},"search": {
+	"title": "Search","content": "{% include search.html %}",
+	"url": "/search/"
+},"extensions-aria": {
+	"title": "ARIA Extensions Opcodes (SFZ 3 hopefuls)","content": "ARIA also adds some [extended MIDI CCs] in addition to those already added",
+	"url": "/extensions/aria/"
+},"extensions-linuxsampler": {
+	"title": "LinuxSampler Extensions Opcodes","content": "{% include sfz/opcode-table-generator.html %}",
+	"url": "/extensions/linuxsampler/"
+},"news-archive": {
+	"title": "News Archive","content": "{% include post-archive.html %}",
+	"url": "/news/archive/"
+},"news": {
+	"title": "Latest News","content": "{% include post.html %}",
+	"url": "/news/"
+},"": {
+	"title": "Home","content": "### Welcome to SFZFormat.com!",
+	"url": "/"
+},"opcodes-key-html": {
+	"title": "","content": "Because of this, it is a very useful and convenient opcode for instruments which",
+	"url": "/opcodes/key.html"
+},"opcodes-label-ccn-html": {
+	"title": "","content": "Used under the ‹[control](/headers/control)› header.",
+	"url": "/opcodes/label_ccN.html"
+},"tutorials-legato-html": {
+	"title": "Legato","content": "## Basic monophony",
+	"url": "/tutorials/legato.html"
+},"types-lfo-html": {
+	"title": "LFO","content": "LFO (Low Frequency Oscillator) opcodes are part of the [Modulation](/misc/categories#modulation)",
+	"url": "/types/lfo.html"
+},"tutorials-lfo-html": {
+	"title": "Pitch LFO Examples","content": "Just copy the following in your preferred text editor.",
+	"url": "/tutorials/lfo.html"
+},"opcodes-lfon-amplitude-html": {
+	"title": "","content": "",
+	"url": "/opcodes/lfoN_amplitude.html"
+},"opcodes-lfon-amplitude-onccx-html": {
+	"title": "","content": "",
+	"url": "/opcodes/lfoN_amplitude_onccX.html"
+},"opcodes-lfon-amplitude-smoothccx-html": {
+	"title": "","content": "",
+	"url": "/opcodes/lfoN_amplitude_smoothccX.html"
+},"opcodes-lfon-amplitude-stepccx-html": {
+	"title": "","content": "",
+	"url": "/opcodes/lfoN_amplitude_stepccX.html"
+},"opcodes-lfon-bitred-html": {
+	"title": "","content": "",
+	"url": "/opcodes/lfoN_bitred.html"
+},"opcodes-lfon-bitred-onccx-html": {
+	"title": "","content": "",
+	"url": "/opcodes/lfoN_bitred_onccX.html"
+},"opcodes-lfon-bitred-smoothccx-html": {
+	"title": "","content": "",
+	"url": "/opcodes/lfoN_bitred_smoothccX.html"
+},"opcodes-lfon-bitred-stepccx-html": {
+	"title": "","content": "",
+	"url": "/opcodes/lfoN_bitred_stepccX.html"
+},"opcodes-lfon-count-html": {
+	"title": "","content": "If this is not set,",
+	"url": "/opcodes/lfoN_count.html"
+},"opcodes-lfon-cutoff-html": {
+	"title": "","content": "",
+	"url": "/opcodes/lfoN_cutoff.html"
+},"opcodes-lfon-cutoff2-html": {
+	"title": "","content": "",
+	"url": "/opcodes/lfoN_cutoff2.html"
+},"opcodes-lfon-cutoff2-onccx-html": {
+	"title": "","content": "",
+	"url": "/opcodes/lfoN_cutoff2_onccX.html"
+},"opcodes-lfon-cutoff2-smoothccx-html": {
+	"title": "","content": "",
+	"url": "/opcodes/lfoN_cutoff2_smoothccX.html"
+},"opcodes-lfon-cutoff2-stepccx-html": {
+	"title": "","content": "",
+	"url": "/opcodes/lfoN_cutoff2_stepccX.html"
+},"opcodes-lfon-cutoff-onccx-html": {
+	"title": "","content": "",
+	"url": "/opcodes/lfoN_cutoff_onccX.html"
+},"opcodes-lfon-cutoff-smoothccx-html": {
+	"title": "","content": "",
+	"url": "/opcodes/lfoN_cutoff_smoothccX.html"
+},"opcodes-lfon-cutoff-stepccx-html": {
+	"title": "","content": "",
+	"url": "/opcodes/lfoN_cutoff_stepccX.html"
+},"opcodes-lfon-decim-html": {
+	"title": "","content": "",
+	"url": "/opcodes/lfoN_decim.html"
+},"opcodes-lfon-decim-onccx-html": {
+	"title": "","content": "",
+	"url": "/opcodes/lfoN_decim_onccX.html"
+},"opcodes-lfon-decim-smoothccx-html": {
+	"title": "","content": "",
+	"url": "/opcodes/lfoN_decim_smoothccX.html"
+},"opcodes-lfon-decim-stepccx-html": {
+	"title": "","content": "",
+	"url": "/opcodes/lfoN_decim_stepccX.html"
+},"opcodes-lfon-delay-html": {
+	"title": "","content": "Often useful for delaying vibrato onset in strings, vocals, guitar, saxophone etc.",
+	"url": "/opcodes/lfoN_delay.html"
+},"opcodes-lfon-delay-onccx-html": {
+	"title": "","content": "Often useful for delaying vibrato onset in strings, vocals, guitar, saxophone etc.",
+	"url": "/opcodes/lfoN_delay_onccX.html"
+},"opcodes-lfon-depth-lfox-html": {
+	"title": "","content": "",
+	"url": "/opcodes/lfoN_depth_lfoX.html"
+},"opcodes-lfon-depthadd-lfox-html": {
+	"title": "","content": "",
+	"url": "/opcodes/lfoN_depthadd_lfoX.html"
+},"opcodes-lfon-drive-html": {
+	"title": "","content": "",
+	"url": "/opcodes/lfoN_drive.html"
+},"opcodes-lfon-drive-onccx-html": {
+	"title": "","content": "",
+	"url": "/opcodes/lfoN_drive_onccX.html"
+},"opcodes-lfon-drive-smoothccx-html": {
+	"title": "","content": "",
+	"url": "/opcodes/lfoN_drive_smoothccX.html"
+},"opcodes-lfon-drive-stepccx-html": {
+	"title": "","content": "",
+	"url": "/opcodes/lfoN_drive_stepccX.html"
+},"opcodes-lfon-eqxbw-html": {
+	"title": "","content": "",
+	"url": "/opcodes/lfoN_eqXbw.html"
+},"opcodes-lfon-eqxbw-onccy-html": {
+	"title": "","content": "",
+	"url": "/opcodes/lfoN_eqXbw_onccY.html"
+},"opcodes-lfon-eqxbw-smoothccy-html": {
+	"title": "","content": "",
+	"url": "/opcodes/lfoN_eqXbw_smoothccY.html"
+},"opcodes-lfon-eqxbw-stepccy-html": {
+	"title": "","content": "",
+	"url": "/opcodes/lfoN_eqXbw_stepccY.html"
+},"opcodes-lfon-eqxfreq-html": {
+	"title": "","content": "",
+	"url": "/opcodes/lfoN_eqXfreq.html"
+},"opcodes-lfon-eqxfreq-onccy-html": {
+	"title": "","content": "",
+	"url": "/opcodes/lfoN_eqXfreq_onccY.html"
+},"opcodes-lfon-eqxfreq-smoothccy-html": {
+	"title": "","content": "",
+	"url": "/opcodes/lfoN_eqXfreq_smoothccY.html"
+},"opcodes-lfon-eqxfreq-stepccy-html": {
+	"title": "","content": "",
+	"url": "/opcodes/lfoN_eqXfreq_stepccY.html"
+},"opcodes-lfon-eqxgain-html": {
+	"title": "","content": "",
+	"url": "/opcodes/lfoN_eqXgain.html"
+},"opcodes-lfon-eqxgain-onccy-html": {
+	"title": "","content": "",
+	"url": "/opcodes/lfoN_eqXgain_onccY.html"
+},"opcodes-lfon-eqxgain-smoothccy-html": {
+	"title": "","content": "",
+	"url": "/opcodes/lfoN_eqXgain_smoothccY.html"
+},"opcodes-lfon-eqxgain-stepccy-html": {
+	"title": "","content": "",
+	"url": "/opcodes/lfoN_eqXgain_stepccY.html"
+},"opcodes-lfon-fade-html": {
+	"title": "","content": "Can be quite useful for making vibrato sound more realistic on instruments such",
+	"url": "/opcodes/lfoN_fade.html"
+},"opcodes-lfon-fade-onccx-html": {
+	"title": "","content": "Can be quite useful for making vibrato sound more realistic on instruments such",
+	"url": "/opcodes/lfoN_fade_onccX.html"
+},"opcodes-lfon-freq-html": {
+	"title": "","content": "Can be modulated by MIDI CC, and the modulation can be smoothed",
+	"url": "/opcodes/lfoN_freq.html"
+},"opcodes-lfon-freq-lfox-html": {
+	"title": "","content": "",
+	"url": "/opcodes/lfoN_freq_lfoX.html"
+},"opcodes-lfon-freq-onccx-html": {
+	"title": "","content": "Can be modulated by MIDI CC, and the modulation can be smoothed",
+	"url": "/opcodes/lfoN_freq_onccX.html"
+},"opcodes-lfon-freq-smoothccx-html": {
+	"title": "","content": "Can be modulated by MIDI CC, and the modulation can be smoothed",
+	"url": "/opcodes/lfoN_freq_smoothccX.html"
+},"opcodes-lfon-freq-stepccx-html": {
+	"title": "","content": "Can be modulated by MIDI CC, and the modulation can be smoothed",
+	"url": "/opcodes/lfoN_freq_stepccX.html"
+},"opcodes-lfon-noiselevel-html": {
+	"title": "","content": "",
+	"url": "/opcodes/lfoN_noiselevel.html"
+},"opcodes-lfon-noiselevel-onccx-html": {
+	"title": "","content": "",
+	"url": "/opcodes/lfoN_noiselevel_onccX.html"
+},"opcodes-lfon-noiselevel-smoothccx-html": {
+	"title": "","content": "",
+	"url": "/opcodes/lfoN_noiselevel_smoothccX.html"
+},"opcodes-lfon-noiselevel-stepccx-html": {
+	"title": "","content": "",
+	"url": "/opcodes/lfoN_noiselevel_stepccX.html"
+},"opcodes-lfon-noisestep-html": {
+	"title": "","content": "",
+	"url": "/opcodes/lfoN_noisestep.html"
+},"opcodes-lfon-noisestep-onccx-html": {
+	"title": "","content": "",
+	"url": "/opcodes/lfoN_noisestep_onccX.html"
+},"opcodes-lfon-noisestep-smoothccx-html": {
+	"title": "","content": "",
+	"url": "/opcodes/lfoN_noisestep_smoothccX.html"
+},"opcodes-lfon-noisestep-stepccx-html": {
+	"title": "","content": "",
+	"url": "/opcodes/lfoN_noisestep_stepccX.html"
+},"opcodes-lfon-noisetone-html": {
+	"title": "","content": "",
+	"url": "/opcodes/lfoN_noisetone.html"
+},"opcodes-lfon-noisetone-onccx-html": {
+	"title": "","content": "",
+	"url": "/opcodes/lfoN_noisetone_onccX.html"
+},"opcodes-lfon-noisetone-smoothccx-html": {
+	"title": "","content": "",
+	"url": "/opcodes/lfoN_noisetone_smoothccX.html"
+},"opcodes-lfon-noisetone-stepccx-html": {
+	"title": "","content": "",
+	"url": "/opcodes/lfoN_noisetone_stepccX.html"
+},"opcodes-lfon-offsetx-html": {
+	"title": "","content": "## Examples",
+	"url": "/opcodes/lfoN_offsetX.html"
+},"opcodes-lfon-pan-html": {
+	"title": "","content": "",
+	"url": "/opcodes/lfoN_pan.html"
+},"opcodes-lfon-pan-onccx-html": {
+	"title": "","content": "",
+	"url": "/opcodes/lfoN_pan_onccX.html"
+},"opcodes-lfon-pan-smoothccx-html": {
+	"title": "","content": "",
+	"url": "/opcodes/lfoN_pan_smoothccX.html"
+},"opcodes-lfon-pan-stepccx-html": {
+	"title": "","content": "",
+	"url": "/opcodes/lfoN_pan_stepccX.html"
+},"opcodes-lfon-phase-html": {
+	"title": "","content": "## Example",
+	"url": "/opcodes/lfoN_phase.html"
+},"opcodes-lfon-phase-onccx-html": {
+	"title": "","content": "## Example",
+	"url": "/opcodes/lfoN_phase_onccX.html"
+},"opcodes-lfon-pitch-html": {
+	"title": "","content": "",
+	"url": "/opcodes/lfoN_pitch.html"
+},"opcodes-lfon-pitch-onccx-html": {
+	"title": "","content": "",
+	"url": "/opcodes/lfoN_pitch_onccX.html"
+},"opcodes-lfon-pitch-smoothccx-html": {
+	"title": "","content": "",
+	"url": "/opcodes/lfoN_pitch_smoothccX.html"
+},"opcodes-lfon-pitch-stepccx-html": {
+	"title": "","content": "",
+	"url": "/opcodes/lfoN_pitch_stepccX.html"
+},"opcodes-lfon-ratio-html": {
+	"title": "","content": "It's possible for one LFO to use sub waveforms in addition to the main waveform.",
+	"url": "/opcodes/lfoN_ratio.html"
+},"opcodes-lfon-resonance-html": {
+	"title": "","content": "",
+	"url": "/opcodes/lfoN_resonance.html"
+},"opcodes-lfon-resonance2-html": {
+	"title": "","content": "",
+	"url": "/opcodes/lfoN_resonance2.html"
+},"opcodes-lfon-resonance2-onccx-html": {
+	"title": "","content": "",
+	"url": "/opcodes/lfoN_resonance2_onccX.html"
+},"opcodes-lfon-resonance2-smoothccx-html": {
+	"title": "","content": "",
+	"url": "/opcodes/lfoN_resonance2_smoothccX.html"
+},"opcodes-lfon-resonance2-stepccx-html": {
+	"title": "","content": "",
+	"url": "/opcodes/lfoN_resonance2_stepccX.html"
+},"opcodes-lfon-resonance-onccx-html": {
+	"title": "","content": "",
+	"url": "/opcodes/lfoN_resonance_onccX.html"
+},"opcodes-lfon-resonance-smoothccx-html": {
+	"title": "","content": "",
+	"url": "/opcodes/lfoN_resonance_smoothccX.html"
+},"opcodes-lfon-resonance-stepccx-html": {
+	"title": "","content": "",
+	"url": "/opcodes/lfoN_resonance_stepccX.html"
+},"opcodes-lfon-scale-html": {
+	"title": "","content": "It's possible for one LFO to use sub waveforms in addition to the main waveform.",
+	"url": "/opcodes/lfoN_scale.html"
+},"opcodes-lfon-smooth-html": {
+	"title": "","content": "",
+	"url": "/opcodes/lfoN_smooth.html"
+},"opcodes-lfon-smooth-onccx-html": {
+	"title": "","content": "",
+	"url": "/opcodes/lfoN_smooth_onccX.html"
+},"opcodes-lfon-stepx-html": {
+	"title": "","content": "",
+	"url": "/opcodes/lfoN_stepX.html"
+},"opcodes-lfon-steps-html": {
+	"title": "","content": "",
+	"url": "/opcodes/lfoN_steps.html"
+},"opcodes-lfon-volume-html": {
+	"title": "","content": "",
+	"url": "/opcodes/lfoN_volume.html"
+},"opcodes-lfon-volume-onccx-html": {
+	"title": "","content": "",
+	"url": "/opcodes/lfoN_volume_onccX.html"
+},"opcodes-lfon-volume-smoothccx-html": {
+	"title": "","content": "",
+	"url": "/opcodes/lfoN_volume_smoothccX.html"
+},"opcodes-lfon-volume-stepccx-html": {
+	"title": "","content": "",
+	"url": "/opcodes/lfoN_volume_stepccX.html"
+},"opcodes-lfon-wave-html": {
+	"title": "","content": "",
+	"url": "/opcodes/lfoN_wave.html"
+},"opcodes-lfon-wave2-html": {
+	"title": "","content": "It's possible for one LFO to use sub waveforms in addition to the main waveform.",
+	"url": "/opcodes/lfoN_wave2.html"
+},"opcodes-lfon-wave-onccx-html": {
+	"title": "","content": "",
+	"url": "/opcodes/lfoN_wave_onccX.html"
+},"opcodes-lfon-width-html": {
+	"title": "","content": "",
+	"url": "/opcodes/lfoN_width.html"
+},"opcodes-lfon-width-onccx-html": {
+	"title": "","content": "",
+	"url": "/opcodes/lfoN_width_onccX.html"
+},"opcodes-lfon-width-smoothccx-html": {
+	"title": "","content": "",
+	"url": "/opcodes/lfoN_width_smoothccX.html"
+},"opcodes-lfon-width-stepccx-html": {
+	"title": "","content": "",
+	"url": "/opcodes/lfoN_width_stepccX.html"
+},"software-players-linuxsampler-html": {
+	"title": "LinuxSampler","content": "The LinuxSampler project was founded in 2002 with the goal to produce a free,",
+	"url": "/software/players/linuxsampler.html"
+},"software-players-liquidsfz-html": {
+	"title": "liquidsfz","content": "liquidsfz is an attempt to implement an free and open source sampler that can",
+	"url": "/software/players/liquidsfz.html"
+},"opcodes-load-end-html": {
+	"title": "","content": "",
+	"url": "/opcodes/load_end.html"
+},"opcodes-load-mode-html": {
+	"title": "","content": "",
+	"url": "/opcodes/load_mode.html"
+},"opcodes-load-start-html": {
+	"title": "","content": "",
+	"url": "/opcodes/load_start.html"
+},"opcodes-lobend-html": {
+	"title": "lobend / hibend","content": "The region will play only if last Pitch Bend message received was in the",
+	"url": "/opcodes/lobend.html"
+},"opcodes-lobpm-html": {
+	"title": "lobpm / hibpm","content": "Host tempo value. The region will play if the host tempo is equal to or higher",
+	"url": "/opcodes/lobpm.html"
+},"opcodes-loccn-html": {
+	"title": "loccN / hiccN","content": "N will normally be a number from 1 to 127.",
+	"url": "/opcodes/loccN.html"
+},"opcodes-lochan-html": {
+	"title": "lochan / hichan","content": " `lochan` and `hichan` will almost always be used together.",
+	"url": "/opcodes/lochan.html"
+},"opcodes-lochanaft-html": {
+	"title": "lochanaft / hichanaft","content": "## Examples",
+	"url": "/opcodes/lochanaft.html"
+},"opcodes-lohdccn-html": {
+	"title": "lohdccN / hihdccN","content": "`realcc` is a deprecated alias for `hdcc`. Other opcodes such as [set_hdccN](set_hdccN)",
+	"url": "/opcodes/lohdccN.html"
+},"opcodes-lokey-html": {
+	"title": "lokey / hikey","content": "When a region only covers one note, it is generally more convenient to use",
+	"url": "/opcodes/lokey.html"
+},"opcodes-loop-count-html": {
+	"title": "","content": "This is in addition to the time the sample is played unlooped, as normal,",
+	"url": "/opcodes/loop_count.html"
+},"opcodes-loop-crossfade-html": {
+	"title": "","content": "It's unknown whether this opcode is actually implemented anywhere.",
+	"url": "/opcodes/loop_crossfade.html"
+},"opcodes-loop-end-html": {
+	"title": "","content": "If `loop_end` is not specified and the sample has a loop defined, the SFZ player",
+	"url": "/opcodes/loop_end.html"
+},"opcodes-loop-mode-html": {
+	"title": "","content": "If `loop_mode` is not specified, each sample will play according to its predefined",
+	"url": "/opcodes/loop_mode.html"
+},"opcodes-loop-start-html": {
+	"title": "","content": "If `loop_start` is not specified and the sample has a loop defined, the SFZ player",
+	"url": "/opcodes/loop_start.html"
+},"opcodes-loop-type-html": {
+	"title": "","content": "This only affects the loop portion of the sample.",
+	"url": "/opcodes/loop_type.html"
+},"opcodes-lopolyaft-html": {
+	"title": "lopolyaft / hipolyaft","content": "The incoming note information in the Polyphonic Aftertouch message is",
+	"url": "/opcodes/lopolyaft.html"
+},"opcodes-loprog-html": {
+	"title": "loprog / hiprog","content": "MIDI program numbers in the General MIDI spec ranged from 0 to 127 but were",
+	"url": "/opcodes/loprog.html"
+},"opcodes-lorand-html": {
+	"title": "lorand / hirand","content": "Random values. The player will generate a new random number on every note-on event,",
+	"url": "/opcodes/lorand.html"
+},"opcodes-lotimer-html": {
+	"title": "lotimer / hitimer","content": "It is not known what the timer is. Not implemented in ARIA, may have been",
+	"url": "/opcodes/lotimer.html"
+},"opcodes-lovel-html": {
+	"title": "lovel / hivel","content": "This is obviously useful for instruments with dynamic layers controlled by velocity.",
+	"url": "/opcodes/lovel.html"
+},"headers-master-html": {
+	"title": "‹master›","content": "An intermediate level in the header hierarchy, between global and group.",
+	"url": "/headers/master.html"
+},"opcodes-master-amplitude-html": {
+	"title": "","content": "## Example",
+	"url": "/opcodes/master_amplitude.html"
+},"opcodes-master-label-html": {
+	"title": "","content": "Useful for debugging.",
+	"url": "/opcodes/master_label.html"
+},"opcodes-master-volume-html": {
+	"title": "","content": "",
+	"url": "/opcodes/master_volume.html"
+},"opcodes-md5-html": {
+	"title": "","content": "It may be used to verify the integrity of the sample file,",
+	"url": "/opcodes/md5.html"
+},"headers-midi-html": {
+	"title": "‹midi›","content": "ARIA extension, was added for MIDI pre-processor effects.",
+	"url": "/headers/midi.html"
+},"extensions-midi-ccs-html": {
+	"title": "Extended MIDI CCs","content": "In the MIDI specification, [MIDI Control Change Messages] can have numbers from 0 to 127.",
+	"url": "/extensions/midi_ccs.html"
+},"opcodes-noise-filter-html": {
+	"title": "","content": "",
+	"url": "/opcodes/noise_filter.html"
+},"opcodes-noise-level-html": {
+	"title": "","content": "",
+	"url": "/opcodes/noise_level.html"
+},"opcodes-noise-level-onccn-html": {
+	"title": "","content": "",
+	"url": "/opcodes/noise_level_onccN.html"
+},"opcodes-noise-level-smoothccn-html": {
+	"title": "","content": "",
+	"url": "/opcodes/noise_level_smoothccN.html"
+},"opcodes-noise-step-html": {
+	"title": "","content": "",
+	"url": "/opcodes/noise_step.html"
+},"opcodes-noise-step-onccn-html": {
+	"title": "","content": "",
+	"url": "/opcodes/noise_step_onccN.html"
+},"opcodes-noise-stereo-html": {
+	"title": "","content": "",
+	"url": "/opcodes/noise_stereo.html"
+},"opcodes-noise-tone-html": {
+	"title": "","content": "",
+	"url": "/opcodes/noise_tone.html"
+},"opcodes-noise-tone-onccn-html": {
+	"title": "","content": "",
+	"url": "/opcodes/noise_tone_onccN.html"
+},"opcodes-note-offset-html": {
+	"title": "","content": "This opcode tells SFZ to shift all incoming MIDI data by the specified number of",
+	"url": "/opcodes/note_offset.html"
+},"opcodes-note-polyphony-html": {
+	"title": "","content": "## Example",
+	"url": "/opcodes/note_polyphony.html"
+},"opcodes-note-selfmask-html": {
+	"title": "","content": "Default self-masking behavior is that higher-velocity notes turn off",
+	"url": "/opcodes/note_selfmask.html"
+},"opcodes-octave-offset-html": {
+	"title": "","content": "This opcode tells SFZ to shift all incoming MIDI data by the specified octave -",
+	"url": "/opcodes/octave_offset.html"
+},"opcodes-off-by-html": {
+	"title": "","content": "When a new region with a group number equal to `off_by` plays,",
+	"url": "/opcodes/off_by.html"
+},"opcodes-off-curve-html": {
+	"title": "","content": "See also [off_time](off_time) and [off_shape](off_shape).",
+	"url": "/opcodes/off_curve.html"
+},"opcodes-off-mode-html": {
+	"title": "","content": "Region off mode. This opcode will determinate how a region is turned off by an",
+	"url": "/opcodes/off_mode.html"
+},"opcodes-off-shape-html": {
+	"title": "","content": "See also [off_time](off_time) and [off_curve](off_curve).",
+	"url": "/opcodes/off_shape.html"
+},"opcodes-off-time-html": {
+	"title": "","content": "See also [off_curve](off_curve) and [off_shape](off_shape).",
+	"url": "/opcodes/off_time.html"
+},"opcodes-offset-html": {
+	"title": "","content": "The player will reproduce samples starting with the very first sample in the file,",
+	"url": "/opcodes/offset.html"
+},"opcodes-offset-ccn-html": {
+	"title": "","content": "The player will reproduce samples starting with the very first sample in the file,",
+	"url": "/opcodes/offset_ccN.html"
+},"opcodes-offset-onccn-html": {
+	"title": "","content": "The player will reproduce samples starting with the very first sample in the file,",
+	"url": "/opcodes/offset_onccN.html"
+},"opcodes-offset-random-html": {
+	"title": "","content": "In many cases, will need to be used with a small [ampeg_attack](ampeg_attack)",
+	"url": "/opcodes/offset_random.html"
+},"opcodes-on-hiccn-html": {
+	"title": "on_loccN / on_hiccN","content": "Sample trigger on MIDI continuous control N.",
+	"url": "/opcodes/on_hiccN.html"
+},"opcodes-on-loccn-html": {
+	"title": "on_loccN / on_hiccN","content": "Sample trigger on MIDI continuous control N.",
+	"url": "/opcodes/on_loccN.html"
+},"opcodes-oscillator-html": {
+	"title": "","content": "",
+	"url": "/opcodes/oscillator.html"
+},"opcodes-oscillator-detune-html": {
+	"title": "","content": "",
+	"url": "/opcodes/oscillator_detune.html"
+},"opcodes-oscillator-detune-onccn-html": {
+	"title": "","content": "",
+	"url": "/opcodes/oscillator_detune_onccN.html"
+},"opcodes-oscillator-mod-depth-html": {
+	"title": "","content": "",
+	"url": "/opcodes/oscillator_mod_depth.html"
+},"opcodes-oscillator-mod-depth-onccn-html": {
+	"title": "","content": "",
+	"url": "/opcodes/oscillator_mod_depth_onccN.html"
+},"opcodes-oscillator-mod-smoothccn-html": {
+	"title": "","content": "",
+	"url": "/opcodes/oscillator_mod_smoothccN.html"
+},"opcodes-oscillator-mode-html": {
+	"title": "","content": "",
+	"url": "/opcodes/oscillator_mode.html"
+},"opcodes-oscillator-multi-html": {
+	"title": "","content": "",
+	"url": "/opcodes/oscillator_multi.html"
+},"opcodes-oscillator-phase-html": {
+	"title": "","content": "",
+	"url": "/opcodes/oscillator_phase.html"
+},"opcodes-oscillator-quality-html": {
+	"title": "","content": "",
+	"url": "/opcodes/oscillator_quality.html"
+},"opcodes-oscillator-table-size-html": {
+	"title": "","content": "",
+	"url": "/opcodes/oscillator_table_size.html"
+},"opcodes-output-html": {
+	"title": "","content": "If the player doesn't feature multiple outputs (which most currently do not),",
+	"url": "/opcodes/output.html"
+},"opcodes-pan-html": {
+	"title": "","content": "If a mono sample is used, pan value defines the position in the stereo image",
+	"url": "/opcodes/pan.html"
+},"opcodes-pan-curveccn-html": {
+	"title": "","content": "If a mono sample is used, pan value defines the position in the stereo image",
+	"url": "/opcodes/pan_curveccN.html"
+},"opcodes-pan-keycenter-html": {
+	"title": "","content": "In this key, [pan_keytrack](pan_keytrack) will have no effect.",
+	"url": "/opcodes/pan_keycenter.html"
+},"opcodes-pan-keytrack-html": {
+	"title": "","content": "Positive values mean higher notes are panned more to the right, negative means",
+	"url": "/opcodes/pan_keytrack.html"
+},"opcodes-pan-law-html": {
+	"title": "","content": "Allowed values are balance and mma. In earlier versions of ARIA,",
+	"url": "/opcodes/pan_law.html"
+},"opcodes-pan-onccn-html": {
+	"title": "","content": "If a mono sample is used, pan value defines the position in the stereo image",
+	"url": "/opcodes/pan_onccN.html"
+},"opcodes-pan-smoothccn-html": {
+	"title": "","content": "If a mono sample is used, pan value defines the position in the stereo image",
+	"url": "/opcodes/pan_smoothccN.html"
+},"opcodes-pan-stepccn-html": {
+	"title": "","content": "If a mono sample is used, pan value defines the position in the stereo image",
+	"url": "/opcodes/pan_stepccN.html"
+},"opcodes-pan-veltrack-html": {
+	"title": "","content": "With positive values, higher-velocity notes will be panned more to the right,",
+	"url": "/opcodes/pan_veltrack.html"
+},"opcodes-param-offset-html": {
+	"title": "","content": "Multiples of 100 seem most convenient, because with param_offset=300 that would",
+	"url": "/opcodes/param_offset.html"
+},"opcodes-phase-html": {
+	"title": "","content": "## Example",
+	"url": "/opcodes/phase.html"
+},"opcodes-pitch-html": {
+	"title": "","content": "Range of `tune` in the SFZ1 spec is ±1 semitone, from -100 to 100, though at least",
+	"url": "/opcodes/pitch.html"
+},"opcodes-pitch-curveccn-html": {
+	"title": "","content": "Range of `tune` in the SFZ1 spec is ±1 semitone, from -100 to 100, though at least",
+	"url": "/opcodes/pitch_curveccN.html"
+},"opcodes-pitch-keycenter-html": {
+	"title": "","content": "For samples which only need to be played at their",
+	"url": "/opcodes/pitch_keycenter.html"
+},"opcodes-pitch-keytrack-html": {
+	"title": "","content": "Default value is 100, which means pitch will change one hundred cents",
+	"url": "/opcodes/pitch_keytrack.html"
+},"opcodes-pitch-onccn-html": {
+	"title": "","content": "Range of `tune` in the SFZ1 spec is ±1 semitone, from -100 to 100, though at least",
+	"url": "/opcodes/pitch_onccN.html"
+},"opcodes-pitch-random-html": {
+	"title": "","content": "## Examples",
+	"url": "/opcodes/pitch_random.html"
+},"opcodes-pitch-smoothccn-html": {
+	"title": "","content": "Range of `tune` in the SFZ1 spec is ±1 semitone, from -100 to 100, though at least",
+	"url": "/opcodes/pitch_smoothccN.html"
+},"opcodes-pitch-stepccn-html": {
+	"title": "","content": "Range of `tune` in the SFZ1 spec is ±1 semitone, from -100 to 100, though at least",
+	"url": "/opcodes/pitch_stepccN.html"
+},"opcodes-pitch-veltrack-html": {
+	"title": "","content": "## Examples",
+	"url": "/opcodes/pitch_veltrack.html"
+},"opcodes-pitcheg-attack-html": {
+	"title": "","content": "## Examples",
+	"url": "/opcodes/pitcheg_attack.html"
+},"opcodes-pitcheg-attack-shape-html": {
+	"title": "","content": "0 is linear. Positive values are slower curves (that means the envelope will",
+	"url": "/opcodes/pitcheg_attack_shape.html"
+},"opcodes-pitcheg-decay-html": {
+	"title": "","content": "## Examples",
+	"url": "/opcodes/pitcheg_decay.html"
+},"opcodes-pitcheg-decay-shape-html": {
+	"title": "","content": "0 is linear, positive values are slower curves (that means the envelope will",
+	"url": "/opcodes/pitcheg_decay_shape.html"
+},"opcodes-pitcheg-decay-zero-html": {
+	"title": "","content": "When 1, indicates decay time is the time it would take to get from 0dBs to -oo,",
+	"url": "/opcodes/pitcheg_decay_zero.html"
+},"opcodes-pitcheg-delay-html": {
+	"title": "","content": "This is the time elapsed from note on to the start of",
+	"url": "/opcodes/pitcheg_delay.html"
+},"opcodes-pitcheg-depth-html": {
+	"title": "","content": "For pitcheg and fileg, this is in cents, and can range from -12000 to 12000.",
+	"url": "/opcodes/pitcheg_depth.html"
+},"opcodes-pitcheg-dynamic-html": {
+	"title": "","content": "When 1, causes envelope durations to be recalculated when a MIDI CC message",
+	"url": "/opcodes/pitcheg_dynamic.html"
+},"opcodes-pitcheg-hold-html": {
+	"title": "","content": "During the hold stage, EG output will remain at its maximum value.",
+	"url": "/opcodes/pitcheg_hold.html"
+},"opcodes-pitcheg-release-html": {
+	"title": "","content": "## Examples",
+	"url": "/opcodes/pitcheg_release.html"
+},"opcodes-pitcheg-release-shape-html": {
+	"title": "","content": "0 is linear, positive values are slower curves (that means the envelope will",
+	"url": "/opcodes/pitcheg_release_shape.html"
+},"opcodes-pitcheg-release-zero-html": {
+	"title": "","content": "When true/on/1, indicates release time is the time it would take to get",
+	"url": "/opcodes/pitcheg_release_zero.html"
+},"opcodes-pitcheg-start-html": {
+	"title": "","content": "## Examples",
+	"url": "/opcodes/pitcheg_start.html"
+},"opcodes-pitcheg-sustain-html": {
+	"title": "","content": "## Examples",
+	"url": "/opcodes/pitcheg_sustain.html"
+},"opcodes-pitcheg-vel2attack-html": {
+	"title": "","content": "## Examples",
+	"url": "/opcodes/pitcheg_vel2attack.html"
+},"opcodes-pitcheg-vel2decay-html": {
+	"title": "","content": "## Examples",
+	"url": "/opcodes/pitcheg_vel2decay.html"
+},"opcodes-pitcheg-vel2delay-html": {
+	"title": "","content": "This is the time elapsed from note on to the start of",
+	"url": "/opcodes/pitcheg_vel2delay.html"
+},"opcodes-pitcheg-vel2depth-html": {
+	"title": "","content": "For pitcheg and fileg, this is in cents, and can range from -12000 to 12000.",
+	"url": "/opcodes/pitcheg_vel2depth.html"
+},"opcodes-pitcheg-vel2hold-html": {
+	"title": "","content": "During the hold stage, EG output will remain at its maximum value.",
+	"url": "/opcodes/pitcheg_vel2hold.html"
+},"opcodes-pitcheg-vel2release-html": {
+	"title": "","content": "## Examples",
+	"url": "/opcodes/pitcheg_vel2release.html"
+},"opcodes-pitcheg-vel2sustain-html": {
+	"title": "","content": "## Examples",
+	"url": "/opcodes/pitcheg_vel2sustain.html"
+},"opcodes-pitchlfo-delay-html": {
+	"title": "","content": "## Examples",
+	"url": "/opcodes/pitchlfo_delay.html"
+},"opcodes-pitchlfo-depth-html": {
+	"title": "","content": "## Examples",
+	"url": "/opcodes/pitchlfo_depth.html"
+},"opcodes-pitchlfo-depthccn-html": {
+	"title": "","content": "## Examples",
+	"url": "/opcodes/pitchlfo_depthccN.html"
+},"opcodes-pitchlfo-depthchanaft-html": {
+	"title": "","content": "## Examples",
+	"url": "/opcodes/pitchlfo_depthchanaft.html"
+},"opcodes-pitchlfo-depthpolyaft-html": {
+	"title": "","content": "## Examples",
+	"url": "/opcodes/pitchlfo_depthpolyaft.html"
+},"opcodes-pitchlfo-fade-html": {
+	"title": "","content": "## Examples",
+	"url": "/opcodes/pitchlfo_fade.html"
+},"opcodes-pitchlfo-freq-html": {
+	"title": "","content": "## Examples",
+	"url": "/opcodes/pitchlfo_freq.html"
+},"opcodes-pitchlfo-freqccn-html": {
+	"title": "","content": "## Examples",
+	"url": "/opcodes/pitchlfo_freqccN.html"
+},"opcodes-pitchlfo-freqchanaft-html": {
+	"title": "","content": "## Examples",
+	"url": "/opcodes/pitchlfo_freqchanaft.html"
+},"opcodes-pitchlfo-freqpolyaft-html": {
+	"title": "","content": "## Examples",
+	"url": "/opcodes/pitchlfo_freqpolyaft.html"
+},"software-players-html": {
+	"title": "SFZ Players","content": "There are several SFZ players, which are used to play samples as defined in SFZ",
+	"url": "/software/players.html"
+},"opcodes-polyphony-html": {
+	"title": "","content": "## Examples",
+	"url": "/opcodes/polyphony.html"
+},"opcodes-polyphony-group-html": {
+	"title": "","content": "",
+	"url": "/opcodes/polyphony_group.html"
+},"opcodes-position-html": {
+	"title": "","content": "A value of zero means centered, negative values move the panoramic to the left,",
+	"url": "/opcodes/position.html"
+},"headers-region-html": {
+	"title": "‹region›","content": "Inside the definition file, a region starts with the  header. A region",
+	"url": "/headers/region.html"
+},"opcodes-region-label-html": {
+	"title": "","content": "Useful for debugging.",
+	"url": "/opcodes/region_label.html"
+},"opcodes-resonance-html": {
+	"title": "","content": "## Example",
+	"url": "/opcodes/resonance.html"
+},"opcodes-resonance2-html": {
+	"title": "","content": "When used, there are two filters applied to the region in series.",
+	"url": "/opcodes/resonance2.html"
+},"opcodes-resonance2-curveccn-html": {
+	"title": "","content": "When used, there are two filters applied to the region in series.",
+	"url": "/opcodes/resonance2_curveccN.html"
+},"opcodes-resonance2-onccn-html": {
+	"title": "","content": "When used, there are two filters applied to the region in series.",
+	"url": "/opcodes/resonance2_onccN.html"
+},"opcodes-resonance2-smoothccn-html": {
+	"title": "","content": "When used, there are two filters applied to the region in series.",
+	"url": "/opcodes/resonance2_smoothccN.html"
+},"opcodes-resonance2-stepccn-html": {
+	"title": "","content": "When used, there are two filters applied to the region in series.",
+	"url": "/opcodes/resonance2_stepccN.html"
+},"opcodes-resonance-curveccn-html": {
+	"title": "","content": "## Example",
+	"url": "/opcodes/resonance_curveccN.html"
+},"opcodes-resonance-onccn-html": {
+	"title": "","content": "## Example",
+	"url": "/opcodes/resonance_onccN.html"
+},"opcodes-resonance-smoothccn-html": {
+	"title": "","content": "## Example",
+	"url": "/opcodes/resonance_smoothccN.html"
+},"opcodes-resonance-stepccn-html": {
+	"title": "","content": "## Example",
+	"url": "/opcodes/resonance_stepccN.html"
+},"opcodes-reverse-hiccn-html": {
+	"title": "reverse_loccN / reverse_hiccN","content": "If MIDI CC X is between reverse_loccN and reverse_hiccN, the region plays reversed.",
+	"url": "/opcodes/reverse_hiccN.html"
+},"opcodes-reverse-loccn-html": {
+	"title": "reverse_loccN / reverse_hiccN","content": "If MIDI CC X is between reverse_loccN and reverse_hiccN, the region plays reversed.",
+	"url": "/opcodes/reverse_loccN.html"
+},"opcodes-rt-dead-html": {
+	"title": "","content": "Allowed values are on and off, default is off, so by default, release",
+	"url": "/opcodes/rt_dead.html"
+},"opcodes-rt-decay-html": {
+	"title": "","content": "## Example",
+	"url": "/opcodes/rt_decay.html"
+},"opcodes-sample-html": {
+	"title": "","content": "Possibly the most important opcode, this is the one that tells the sampler which",
+	"url": "/opcodes/sample.html"
+},"opcodes-sample-quality-html": {
+	"title": "","content": "",
+	"url": "/opcodes/sample_quality.html"
+},"opcodes-script-html": {
+	"title": "","content": "This is an extension to the SFZ file format which is currently only available",
+	"url": "/opcodes/script.html"
+},"opcodes-seq-length-html": {
+	"title": "","content": "The player will keep an internal counter creating a consecutive note-on sequence",
+	"url": "/opcodes/seq_length.html"
+},"opcodes-seq-position-html": {
+	"title": "","content": "This is used together with [seq_length](/opcodes/seq_length) to use samples",
+	"url": "/opcodes/seq_position.html"
+},"opcodes-set-ccn-html": {
+	"title": "","content": "Used under the ‹[control](/headers/control)› header.",
+	"url": "/opcodes/set_ccN.html"
+},"opcodes-set-hdccn-html": {
+	"title": "","content": "Sets a default initial value for MIDI CC number X using a floating point value,",
+	"url": "/opcodes/set_hdccN.html"
+},"software-players-sfizz-html": {
+	"title": "sfizz","content": "[sfizz] is an opensource Linux SFZ library based on [libsndfile],",
+	"url": "/software/players/sfizz.html"
+},"misc-sfz1-html": {
+	"title": "SFZ v1 Opcodes","content": "{% include sfz/opcode-table-generator.html %}",
+	"url": "/misc/sfz1.html"
+},"tutorials-sfz1-modulations-html": {
+	"title": "SFZ1 modulations","content": "The set of modulations available under the SFZ1 specification is fixed, and",
+	"url": "/tutorials/sfz1_modulations.html"
+},"misc-sfz2-html": {
+	"title": "SFZ v2 Opcodes","content": "{% include sfz/opcode-table-generator.html %}",
+	"url": "/misc/sfz2.html"
+},"tutorials-sfz2-modulations-html": {
+	"title": "SFZ2 modulations","content": "The modulations available under SFZ2 are much more flexible than the fixed set",
+	"url": "/tutorials/sfz2_modulations.html"
+},"software-players-sfzero-html": {
+	"title": "SFZero","content": "[Juce] based SFZ player. See the [project page] for more info.",
+	"url": "/software/players/sfzero.html"
+},"modulations-smoothccn-html": {
+	"title": "smoothccN","content": "Sets the smoothness with which the modulation target is modulated by MIDI CC N.",
+	"url": "/modulations/smoothccN.html"
+},"opcodes-sostenuto-cc-html": {
+	"title": "","content": "ARIA extension used under the ‹[control](/headers/control)› header to reassign",
+	"url": "/opcodes/sostenuto_cc.html"
+},"opcodes-sostenuto-lo-html": {
+	"title": "","content": "Used under the ‹[control](/headers/control)› header.",
+	"url": "/opcodes/sostenuto_lo.html"
+},"opcodes-sostenuto-sw-html": {
+	"title": "","content": "## Example",
+	"url": "/opcodes/sostenuto_sw.html"
+},"opcodes-start-hiccn-html": {
+	"title": "start_loccN / start_hiccN","content": "",
+	"url": "/opcodes/start_hiccN.html"
+},"opcodes-start-loccn-html": {
+	"title": "start_loccN / start_hiccN","content": "",
+	"url": "/opcodes/start_loccN.html"
+},"modulations-stepccn-html": {
+	"title": "stepccN","content": "Sets the number of steps with which the modulation target is modulated by",
+	"url": "/modulations/stepccN.html"
+},"opcodes-stop-beats-html": {
+	"title": "","content": "Intended to be a counterpart to delay_beats but apparently not actually",
+	"url": "/opcodes/stop_beats.html"
+},"opcodes-stop-hiccn-html": {
+	"title": "stop_loccN / stop_hiccN","content": "This was intended to be used together with [start_loccN / start_hiccN](start_loccN),",
+	"url": "/opcodes/stop_hiccN.html"
+},"opcodes-stop-loccn-html": {
+	"title": "stop_loccN / stop_hiccN","content": "This was intended to be used together with [start_loccN / start_hiccN](start_loccN),",
+	"url": "/opcodes/stop_loccN.html"
+},"opcodes-sustain-cc-html": {
+	"title": "","content": "ARIA extension used under the ‹[control](/headers/control)› header to reassign",
+	"url": "/opcodes/sustain_cc.html"
+},"opcodes-sustain-lo-html": {
+	"title": "","content": "This ARIA extension used under the ‹[control](/headers/control)› header sets the",
+	"url": "/opcodes/sustain_lo.html"
+},"opcodes-sustain-sw-html": {
+	"title": "","content": "## Example",
+	"url": "/opcodes/sustain_sw.html"
+},"tutorials-sustained-note-basics-html": {
+	"title": "Sustained note basics","content": "We've covered the basic opcodes required to map simple drum instruments on",
+	"url": "/tutorials/sustained_note_basics.html"
+},"opcodes-sw-default-html": {
+	"title": "sw_default / sw_label","content": "Just copy the following in your preferred text editor (we suggest [Notepad++](https://notepad-plus-plus.org/)),",
+	"url": "/opcodes/sw_default.html"
+},"opcodes-sw-down-html": {
+	"title": "","content": "`sw_down` can be entered in either MIDI note numbers (0 to 127) or in MIDI note",
+	"url": "/opcodes/sw_down.html"
+},"opcodes-sw-hikey-html": {
+	"title": "sw_lokey / sw_hikey","content": "Basically, this tells the SFZ player where the keyswitches are.",
+	"url": "/opcodes/sw_hikey.html"
+},"opcodes-sw-hilast-html": {
+	"title": "sw_lolast / sw_hilast","content": "`sw_lolast` specifies the bottom of the range, and `sw_hilast` the high.",
+	"url": "/opcodes/sw_hilast.html"
+},"opcodes-sw-label-html": {
+	"title": "sw_default / sw_label","content": "Just copy the following in your preferred text editor (we suggest [Notepad++](https://notepad-plus-plus.org/)),",
+	"url": "/opcodes/sw_label.html"
+},"opcodes-sw-last-html": {
+	"title": "","content": "`sw_last` can be entered in either MIDI note numbers (0 to 127) or in MIDI note",
+	"url": "/opcodes/sw_last.html"
+},"opcodes-sw-lokey-html": {
+	"title": "sw_lokey / sw_hikey","content": "Basically, this tells the SFZ player where the keyswitches are.",
+	"url": "/opcodes/sw_lokey.html"
+},"opcodes-sw-lolast-html": {
+	"title": "sw_lolast / sw_hilast","content": "`sw_lolast` specifies the bottom of the range, and `sw_hilast` the high.",
+	"url": "/opcodes/sw_lolast.html"
+},"opcodes-sw-note-offset-html": {
+	"title": "","content": "Used under the ‹[control](/headers/control)› header.",
+	"url": "/opcodes/sw_note_offset.html"
+},"opcodes-sw-octave-offset-html": {
+	"title": "","content": "Used under the ‹[control](/headers/control)› header.",
+	"url": "/opcodes/sw_octave_offset.html"
+},"opcodes-sw-previous-html": {
+	"title": "","content": "`sw_previous` can be entered in either MIDI note numbers (0 to 127) or",
+	"url": "/opcodes/sw_previous.html"
+},"opcodes-sw-up-html": {
+	"title": "","content": "Key has to be in the range specified by [sw_lokey](sw_lokey) and [sw_hikey](sw_lokey).",
+	"url": "/opcodes/sw_up.html"
+},"opcodes-sw-vel-html": {
+	"title": "","content": "Values can be:",
+	"url": "/opcodes/sw_vel.html"
+},"opcodes-sync-beats-html": {
+	"title": "","content": "When `sync_beats` is specified and after input controls instruct the region to play,",
+	"url": "/opcodes/sync_beats.html"
+},"opcodes-sync-offset-html": {
+	"title": "","content": "When [sync_beats](sync_beats) is specified and after input controls instruct",
+	"url": "/opcodes/sync_offset.html"
+},"software-tools-html": {
+	"title": "SFZ Creation Tools","content": "Although SFZ files can be created with any text editor, and some users have also",
+	"url": "/software/tools.html"
+},"opcodes-transpose-html": {
+	"title": "","content": "## Examples",
+	"url": "/opcodes/transpose.html"
+},"opcodes-trigger-html": {
+	"title": "","content": "Values can be:",
+	"url": "/opcodes/trigger.html"
+},"opcodes-tune-html": {
+	"title": "","content": "Range of `tune` in the SFZ1 spec is ±1 semitone, from -100 to 100, though at least",
+	"url": "/opcodes/tune.html"
+},"opcodes-tune-curveccn-html": {
+	"title": "","content": "Range of `tune` in the SFZ1 spec is ±1 semitone, from -100 to 100, though at least",
+	"url": "/opcodes/tune_curveccN.html"
+},"opcodes-tune-onccn-html": {
+	"title": "","content": "Range of `tune` in the SFZ1 spec is ±1 semitone, from -100 to 100, though at least",
+	"url": "/opcodes/tune_onccN.html"
+},"opcodes-tune-smoothccn-html": {
+	"title": "","content": "Range of `tune` in the SFZ1 spec is ±1 semitone, from -100 to 100, though at least",
+	"url": "/opcodes/tune_smoothccN.html"
+},"opcodes-tune-stepccn-html": {
+	"title": "","content": "Range of `tune` in the SFZ1 spec is ±1 semitone, from -100 to 100, though at least",
+	"url": "/opcodes/tune_stepccN.html"
+},"opcodes-vn-html": {
+	"title": "‹curve›","content": "A header for defining curves for MIDI CC controls.",
+	"url": "/opcodes/vN.html"
+},"modulations-moved-varnn-curveccx-html": {
+	"title": "","content": "## Example",
+	"url": "/modulations/moved/varNN_curveccX.html"
+},"opcodes-varnn-curveccx-html": {
+	"title": "","content": "Specifies the method used to calculate variable number NN from MIDI CCs.",
+	"url": "/opcodes/varNN_curveccX.html"
+},"opcodes-varnn-mod-html": {
+	"title": "","content": "Specifies the method used to calculate variable number NN from MIDI CCs.",
+	"url": "/opcodes/varNN_mod.html"
+},"modulations-moved-varnn-onccx-html": {
+	"title": "","content": "The amount by which MIDI CC X modulates variable NN. The modulation is either",
+	"url": "/modulations/moved/varNN_onccX.html"
+},"opcodes-varnn-onccx-html": {
+	"title": "","content": "Specifies the method used to calculate variable number NN from MIDI CCs.",
+	"url": "/opcodes/varNN_onccX.html"
+},"opcodes-varnn-target-html": {
+	"title": "","content": "The list of possible modulation targets is basically the same standard list",
+	"url": "/opcodes/varNN_target.html"
+},"opcodes-vendor-specific-html": {
+	"title": "","content": "",
+	"url": "/opcodes/vendor_specific.html"
+},"tutorials-vibrato-html": {
+	"title": "Vibrato","content": "Emulating vibrato for solo instruments or voices with LFOs is not difficult. The challenges",
+	"url": "/tutorials/vibrato.html"
+},"tutorials-videos-html": {
+	"title": "SFZ Programming Video Tutorials","content": "Here are a couple of videos to help you get started with SFZ",
+	"url": "/tutorials/videos.html"
+},"opcodes-volume-html": {
+	"title": "","content": "Range is -144.6 to 6 in the specification,",
+	"url": "/opcodes/volume.html"
+},"opcodes-volume-curveccn-html": {
+	"title": "","content": "Range is -144.6 to 6 in the specification,",
+	"url": "/opcodes/volume_curveccN.html"
+},"opcodes-volume-onccn-html": {
+	"title": "","content": "Range is -144.6 to 6 in the specification,",
+	"url": "/opcodes/volume_onccN.html"
+},"opcodes-volume-smoothccn-html": {
+	"title": "","content": "Range is -144.6 to 6 in the specification,",
+	"url": "/opcodes/volume_smoothccN.html"
+},"opcodes-volume-stepccn-html": {
+	"title": "","content": "Range is -144.6 to 6 in the specification,",
+	"url": "/opcodes/volume_stepccN.html"
+},"opcodes-waveguide-html": {
+	"title": "","content": "Enables waveguide synthesis for the region. Not properly documented,",
+	"url": "/opcodes/waveguide.html"
+},"docs-website-development-reference-html": {
+	"title": "Website Development Reference","content": "## Introduction",
+	"url": "/docs/website-development-reference.html"
+},"opcodes-width-html": {
+	"title": "","content": "A `width` value of 0 makes a stereo sample play as if it were mono (adding both",
+	"url": "/opcodes/width.html"
+},"opcodes-width-curveccn-html": {
+	"title": "","content": "A `width` value of 0 makes a stereo sample play as if it were mono (adding both",
+	"url": "/opcodes/width_curveccN.html"
+},"opcodes-width-onccn-html": {
+	"title": "","content": "A `width` value of 0 makes a stereo sample play as if it were mono (adding both",
+	"url": "/opcodes/width_onccN.html"
+},"opcodes-width-smoothccn-html": {
+	"title": "","content": "A `width` value of 0 makes a stereo sample play as if it were mono (adding both",
+	"url": "/opcodes/width_smoothccN.html"
+},"opcodes-width-stepccn-html": {
+	"title": "","content": "A `width` value of 0 makes a stereo sample play as if it were mono (adding both",
+	"url": "/opcodes/width_stepccN.html"
+},"opcodes-xf-cccurve-html": {
+	"title": "","content": "Values can be:",
+	"url": "/opcodes/xf_cccurve.html"
+},"opcodes-xf-keycurve-html": {
+	"title": "","content": "Values can be:",
+	"url": "/opcodes/xf_keycurve.html"
+},"opcodes-xf-velcurve-html": {
+	"title": "","content": "Values can be:",
+	"url": "/opcodes/xf_velcurve.html"
+},"opcodes-xfin-hiccn-html": {
+	"title": "xfin_loccN / xfin_hiccN","content": "`xfin_loccN` and `xfin_hiccN` set the range of values in the MIDI continuous",
+	"url": "/opcodes/xfin_hiccN.html"
+},"opcodes-xfin-hikey-html": {
+	"title": "xfin_lokey / xfin_hikey","content": "`xfin_lokey` and `xfin_hikey` define the fade-in keyboard zone for the region.",
+	"url": "/opcodes/xfin_hikey.html"
+},"opcodes-xfin-hivel-html": {
+	"title": "xfin_lovel / xfin_hivel","content": "`xfin_lovel` and `xfin_hivel` define the fade-in velocity range for the region.",
+	"url": "/opcodes/xfin_hivel.html"
+},"opcodes-xfin-loccn-html": {
+	"title": "xfin_loccN / xfin_hiccN","content": "`xfin_loccN` and `xfin_hiccN` set the range of values in the MIDI continuous",
+	"url": "/opcodes/xfin_loccN.html"
+},"opcodes-xfin-lokey-html": {
+	"title": "xfin_lokey / xfin_hikey","content": "`xfin_lokey` and `xfin_hikey` define the fade-in keyboard zone for the region.",
+	"url": "/opcodes/xfin_lokey.html"
+},"opcodes-xfin-lovel-html": {
+	"title": "xfin_lovel / xfin_hivel","content": "`xfin_lovel` and `xfin_hivel` define the fade-in velocity range for the region.",
+	"url": "/opcodes/xfin_lovel.html"
+},"opcodes-xfout-hiccn-html": {
+	"title": "xfout_loccN / xfout_hiccN","content": "`xfout_loccN` and `xfout_hiccN` set the range of values in the MIDI continuous",
+	"url": "/opcodes/xfout_hiccN.html"
+},"opcodes-xfout-hikey-html": {
+	"title": "xfout_lokey / xfout_hikey","content": "`xfout_lokey` and `xfout_hikey` define the fade-out keyboard zone for the region.",
+	"url": "/opcodes/xfout_hikey.html"
+},"opcodes-xfout-hivel-html": {
+	"title": "xfout_lovel / xfout_hivel","content": "`xfout_lokey` and `xfout_hikey` define the fade-out velocity range for the region.",
+	"url": "/opcodes/xfout_hivel.html"
+},"opcodes-xfout-loccn-html": {
+	"title": "xfout_loccN / xfout_hiccN","content": "`xfout_loccN` and `xfout_hiccN` set the range of values in the MIDI continuous",
+	"url": "/opcodes/xfout_loccN.html"
+},"opcodes-xfout-lokey-html": {
+	"title": "xfout_lokey / xfout_hikey","content": "`xfout_lokey` and `xfout_hikey` define the fade-out keyboard zone for the region.",
+	"url": "/opcodes/xfout_lokey.html"
+},"opcodes-xfout-lovel-html": {
+	"title": "xfout_lovel / xfout_hivel","content": "`xfout_lokey` and `xfout_hikey` define the fade-out velocity range for the region.",
+	"url": "/opcodes/xfout_lovel.html"
+},"extensions-aria-xml-instrument-bank-html": {
+	"title": "XML instrument bank","content": "An ARIA-specific element, an XML bank is a collection of several SFZ instruments",
+	"url": "/extensions/aria/xml_instrument_bank.html"
+},"software-players-zerberus-html": {
+	"title": "Zerberus","content": "[MuseScore] SFZ synthesizer.",
+	"url": "/software/players/zerberus.html"
+},"sitemap-xml": {
+	"title": "","content": "",
+	"url": "/sitemap.xml"
+}};
+</script>
+
+
+					</article>
+				</div>
+				<div class="col-md-3">
+					<aside>
+
+						<div class="card border-dark mb-3">
+							<div class="card-header text-light"
+								style="background-color:#222">
+								<i class="fas fa-eye"
+									aria-hidden="true"></i>
+								Follow us
+							</div>
+							<div class="card-body" style="padding: 0.5rem">
+								<ul class="nav nav-pills flex-column">
+	<li class="nav-item">
+										<a class="nav-link" href="https://github.com/sfzformat/"
+											title="GitHub Organization" style="padding: 0.35rem 0.25rem">
+										<i class="fab fa-github fa-fw"
+										aria-hidden="true"></i>
+										GitHub Organization</a>
+									</li>
+	<li class="nav-item">
+										<a class="nav-link" href="https://www.plogue.com/plgfrms/viewforum.php?f=14"
+											title="Plogue Forum" style="padding: 0.35rem 0.25rem">
+										<i class="fas fa-users fa-fw"
+										aria-hidden="true"></i>
+										Plogue Forum</a>
+									</li>
+	<li class="nav-item">
+										<a class="nav-link" href="https://discord.gg/t7nrZ6d"
+											title="Discord Chat" style="padding: 0.35rem 0.25rem">
+										<i class="fab fa-discord fa-fw"
+										aria-hidden="true"></i>
+										Discord Chat</a>
+									</li>
+	<li class="nav-item">
+										<a class="nav-link" href="https://kiwiirc.com/nextclient/#irc://irc.freenode.net:+6697/#sfzformat"
+											title="Internet Relay Chat" style="padding: 0.35rem 0.25rem">
+										<i class="fas fa-hashtag fa-fw"
+										aria-hidden="true"></i>
+										IRC</a>
+									</li>
+	<li class="nav-item">
+										<a class="nav-link" href="/atom.xml"
+											title="News Atom Feed" style="padding: 0.35rem 0.25rem">
+										<i class="fas fa-rss fa-fw"
+										aria-hidden="true"></i>
+										News Atom Feed</a>
+									</li>
+	
+								</ul>
+							</div>
+						</div>
+
+						<div class="card border-dark mb-3">
+							<div class="card-header text-light"
+								style="background-color:#222">
+								<i class="fas fa-link"
+									aria-hidden="true"></i>
+								Quick links
+							</div>
+							<div class="card-body" style="padding: 0.5rem">
+								<ul class="nav nav-pills flex-column">
+	<li class="nav-item">
+										<a class="nav-link" href="/legacy"
+											title="Old rgc:audio SFZ page" style="padding: 0.35rem 0.25rem">
+										<i class="fas fa-book fa-fw"
+										aria-hidden="true"></i>
+										Old rgc:audio SFZ page</a>
+									</li>
+	<li class="nav-item">
+										<a class="nav-link" href="http://www.drealm.info/sfz/"
+											title="Peter L. Jones' SFZ page" style="padding: 0.35rem 0.25rem">
+										<i class="fas fa-book fa-fw"
+										aria-hidden="true"></i>
+										Peter L. Jones' SFZ page</a>
+									</li>
+	<li class="nav-item">
+										<a class="nav-link" href="https://github.com/sfzinstruments/"
+											title="Free SFZ Instruments" style="padding: 0.35rem 0.25rem">
+										<i class="fas fa-download fa-fw"
+										aria-hidden="true"></i>
+										Free SFZ Instruments</a>
+									</li>
+	<li class="nav-item">
+										<a class="nav-link" href="https://www.kvraudio.com/forum/viewtopic.php?f=42&t=508861"
+											title="KVR Forum SFZ post" style="padding: 0.35rem 0.25rem">
+										<i class="fas fa-users fa-fw"
+										aria-hidden="true"></i>
+										KVR Forum SFZ post</a>
+									</li>
+	
+								</ul>
+							</div>
+						</div>
+
+
+					</aside>
+				</div>
+			</div>
+			<hr>
+			<footer><p>
+					This site is open source.
+					<a href="https://github.com/sfzformat/sfzformat.github.io/edit/source/search/index.md">
+					Improve this page</a>
+				</p>
+			</footer>
+
+		</div>
+		<script src="/assets/js/scripts.min.js"></script>		<script type="text/javascript" src="/assets/js/prettify/prettify.min.js"></script>
+		<script type="text/javascript" src="/assets/js/prettify/lang-sfz.js"></script>
+		<script>
+			$(document).ready(function(){
+			$('pre').addClass('prettyprint lang-sfz');
+			prettyPrint();
+			});
+		</script>
+
+
+	</body>
+</html>
