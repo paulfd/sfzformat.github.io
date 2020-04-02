@@ -1257,6 +1257,8 @@ categories:
         midi_cc:
         - name: "pan_onccN"
           version: "Cakewalk"
+        - name: "pan_ccN"
+          version: "ARIA"
         - name: "pan_curveccN"
           version: "Cakewalk"
         - name: "pan_smoothccN"
@@ -2409,6 +2411,8 @@ categories:
           version: "SFZ v2"
           alias:
           - name: "tune_onccN"
+            version: "ARIA"
+          - name: "tune_ccN"
             version: "ARIA"
           value:
             min: -9600
